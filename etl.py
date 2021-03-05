@@ -4,7 +4,6 @@ from datetime import datetime
 import pandas as pd
 import glob
 import os
-import psycopg2
 import csv
 import sys
 
@@ -34,8 +33,8 @@ for filename in all_files:
             try:                
                 disposition = session.query(DimDisposition).filter(DimDisposition.disposition==row[11]).first()
                 # Check if it is an incoming call
-                # if row[4] == 'ext-local' or row[4] == 'from-queue-exten-internal':
-                if row[4] == 'none calls':
+                if row[4] == 'from-queue-exten-internal':
+                # if row[4] == 'none calls':
                     call_type = session.query(DimCallType).filter(DimCallType.call_type=='Incoming').first()
                     agent = session.query(DimAgent).filter(DimAgent.extension==int(row[3])).first()
                     # check if deal exists
@@ -78,10 +77,4 @@ for filename in all_files:
             finally:
                 session.close()
     
-    # li = []
-    # df = pd.read_csv(filename, index_col=None, header=0)
-    # li.append(df)
-
-# frame = pd.concat(li, axis=0, ignore_index=True)
-
-# print(frame.info())
+    
