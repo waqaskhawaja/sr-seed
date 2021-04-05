@@ -1,8 +1,5 @@
-from datetime import datetime
-import glob
-import os
+from model import Gender
 import csv
-import sys
 import requests
 import json
 
@@ -37,28 +34,3 @@ def import_genders():
                 response = requests.post(base_url + '/api/genders',headers=headers, json=gender)
 
 
-
-
-
-
-
-
-# for filename in all_files:
-#     with open(filename, newline='') as csvfile:
-#         csv_file = csv.reader(csvfile, delimiter=',', quotechar='"')
-#         next(csv_file, None)
-#         call_type = DimCallType()
-#         deal = DimDeal()
-#         disposition = DimDisposition()        
-#         for row in csv_file:
-#             call = FactCall()
-#             try:                
-#                 disposition = session.query(DimDisposition).filter(DimDisposition.disposition==row[11]).first()
-#                 # Check if it is an incoming call
-#                 if row[4] == 'from-queue-exten-internal':
-#                 # if row[4] == 'none calls':
-                    
-                
-            
-    
-    

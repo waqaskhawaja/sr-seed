@@ -1,8 +1,5 @@
-from datetime import datetime
-import glob
-import os
+from model import Country
 import csv
-import sys
 import requests
 import json
 
