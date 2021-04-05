@@ -36,3 +36,13 @@ class CountryAdministrativeUnit:
 #     name = Column(String)    
 #     urdu_name = Column(String)
 #     city_id = Column(Integer, ForeignKey("city.id"))
+
+class Gender:
+
+    def __init__(self):
+        self.id = None
+        self.name = None
+        self.urdu_name = None
+        
+    def __repr__(self):
+        return self.name + ', ' + self.urdu_name
