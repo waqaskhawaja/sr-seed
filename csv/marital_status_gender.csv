@@ -1,9 +1,7 @@
 "Marital Status", Gender
-Single, Male
-Single, Female
-Married, Male
-Separated, Male
-Divorced, Male
-Divorced. Female
-Widow, Female
-Widower, Male
+Single, Male|Female
+Married,Male
+Separated,Male
+Divorced, Male|Female
+Widow,Female
+Widower,Male

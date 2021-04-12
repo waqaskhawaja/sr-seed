@@ -3,12 +3,13 @@ class Country:
     def __init__(self):
         self.id = None
         self.name = None
-        self.urdu_name = None
-        self.iso_code = None
-        self.address_unit_identifier = None
+        self.urduName = None
+        self.isoCode = None
+        self.addressUnitIdentifier = None
         
     def __repr__(self):
-        return self.name + ', ' + self.urdu_name + ', ' + self.iso_code 
+        return self.name + ', ' + self.urduName + ', ' + self.isoCode 
+
 
 class CountryAdministrativeUnit:
 
@@ -42,10 +43,10 @@ class Gender:
     def __init__(self):
         self.id = None
         self.name = None
-        self.urdu_name = None
-        
+        self.urduName = None
+
     def __repr__(self):
-        return self.name + ', ' + self.urdu_name
+        return self.name + ', ' + self.urduName
 
 
 class MaritalStatus:
@@ -53,7 +54,13 @@ class MaritalStatus:
     def __init__(self):
         self.id = None
         self.name = None
-        self.urdu_name = None
-        
+        self.urduName = None
+        self.genders = []
+
+    def encode_gender(self, obj):
+        if isinstance(obj, Gender):
+            return obj.__dict__
+        return obj
+    
     def __repr__(self):
-        return self.name + ', ' + self.urdu_name
+        return self.name + ', ' + self.urduName + ', ' + ' '.join(genders)

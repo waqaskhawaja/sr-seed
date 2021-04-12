@@ -1,9 +1,12 @@
 from model import Country
+import glob
+import os
+import sys
 import csv
 import requests
 import json
 
-base_url = 'http://localhost:9000'
+base_url = 'http://localhost:8080'
 
 path = r'./csv' # use your path
 all_files = glob.glob(os.path.join(path, "countries.csv"))
@@ -24,9 +27,9 @@ def get_country_by_name(country_name):
             country = Country()
             country.id = response[0]['id']
             country.name = response[0]['name']
-            country.iso_code = response[0]['isoCode']
-            country.urdu_name = response[0]['urduName']
-            country.address_unit_identifier = response[0]['addressUnitIdentifier']        
+            country.isoCode = response[0]['isoCode']
+            country.urduName = response[0]['urduName']
+            country.addressUnitIdentifier = response[0]['addressUnitIdentifier']        
             return country
 
 
@@ -35,12 +38,12 @@ def import_countries():
         reader = csv.reader(files)
         next(reader, None)
         for data in reader:                        
-            if get_country_by_name(data[0]) is None:
+            if get_country_by_name(data[0].strip()) is None:
                 country = {}
-                country['name'] = data[0]
-                country['isoCode'] = data[1]
-                country['urduName'] = data[2]
-                country['addressUnitIdentifier'] = data[3]
+                country['name'] = data[0].strip()
+                country['isoCode'] = data[1].strip()
+                country['urduName'] = data[2].strip()
+                country['addressUnitIdentifier'] = data[3].strip()
                 response = requests.post(base_url + '/api/countries',headers=headers, json=country)
 
 
