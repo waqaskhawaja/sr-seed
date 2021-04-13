@@ -1,11 +1,10 @@
+from config import base_url, auth_params
 from model import MaritalStatus
 import csv
 import requests
 import json
 
-base_url = 'http://localhost:8080'
 
-auth_params = {'username':'admin','password':'admin'}
 response = requests.post(base_url + '/api/authenticate', json=auth_params)
 id_token = (json.loads(response.text))['id_token']
 headers = {"Authorization": "Bearer " + id_token}
@@ -28,10 +27,5 @@ def import_marital_statuses():
         next(reader, None)
         for data in reader:                        
             if get_marital_status_by_name(data[0].strip()) is None:
-                marital_status = {}
-                marital_status['name'] = data[0].strip()       
-                marital_status['urduName'] = data[1].strip()            
-                local_response = requests.post(base_url + '/api/marital-statuses',headers=headers, json=marital_status)
-                print(local_response.request.body)
-
-
+                marital_status = {'name': data[0].strip(), 'urduName': data[1].strip()}
+                requests.post(base_url + '/api/marital-statuses',headers=headers, json=marital_status)

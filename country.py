@@ -1,17 +1,16 @@
+from config import base_url, auth_params
 from model import Country
 import glob
 import os
-import sys
 import csv
 import requests
 import json
 
-base_url = 'http://localhost:8080'
 
 path = r'./csv' # use your path
 all_files = glob.glob(os.path.join(path, "countries.csv"))
 
-auth_params = {'username':'admin','password':'admin'}
+
 response = requests.post(base_url + '/api/authenticate', json=auth_params)
 id_token = (json.loads(response.text))['id_token']
 

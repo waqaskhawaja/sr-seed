@@ -64,3 +64,13 @@ class MaritalStatus:
     
     def __repr__(self):
         return self.name + ', ' + self.urduName + ', ' + ' '.join(genders)
+
+
+class EducationLevel:
+
+    def __init__(self):
+        self.id = None
+        self.name = None
+
+    def __repr__(self):
+        return self.name

@@ -1,13 +1,11 @@
-from model import MaritalStatus, Gender
+from config import base_url, auth_params
 import marital_status
 import gender
 import csv
 import requests
 import json
 
-base_url = 'http://localhost:8080'
 
-auth_params = {'username': 'admin', 'password': 'admin'}
 response = requests.post(base_url + '/api/authenticate', json=auth_params)
 id_token = (json.loads(response.text))['id_token']
 headers = {"Authorization": "Bearer " + id_token, 'Connection': None, 'Accept-Encoding': None,
