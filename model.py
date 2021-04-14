@@ -61,9 +61,9 @@ class MaritalStatus:
         if isinstance(obj, Gender):
             return obj.__dict__
         return obj
-    
+
     def __repr__(self):
-        return self.name + ', ' + self.urduName + ', ' + ' '.join(genders)
+        return self.name + ', ' + self.urduName + ', ' + ' '.join(self.genders)
 
 
 class EducationLevel:
@@ -74,3 +74,20 @@ class EducationLevel:
 
     def __repr__(self):
         return self.name
+
+
+class Caste:
+
+    def __init__(self):
+        self.id = None
+        self.name = None
+        self.urduName = None
+        self.parent = None
+
+    def encode_parent(self, obj):
+        if isinstance(obj, Caste):
+            return obj.__dict__
+        return obj
+
+    def __repr__(self):
+        return self.name + ', ' + self.urduName + ', ' + self.parent.name
