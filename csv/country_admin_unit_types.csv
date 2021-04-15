@@ -1,0 +1,4 @@
+Name,urduName,Parent,Country
+Province,صوبہ,,Pakistan
+District,ضلع,Province,Pakistan
+Tehsil,تحصیل,District,Pakistan

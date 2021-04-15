@@ -29,7 +29,6 @@ class CountryAdministrativeUnit:
 #     country_administrative_unit_id = Column(Integer, ForeignKey("country_administrative_unit.id"))
     
 
-
 # class CityArea(Base):
     
     
@@ -37,6 +36,7 @@ class CountryAdministrativeUnit:
 #     name = Column(String)    
 #     urdu_name = Column(String)
 #     city_id = Column(Integer, ForeignKey("city.id"))
+
 
 class Gender:
 
@@ -141,3 +141,23 @@ class Religion:
 
     def __repr__(self):
         return self.name
+
+
+class CountryAdminUnitType:
+
+    def __init__(self):
+        self.id = None
+        self.name = None
+        self.urduName = None
+        self.parent = None
+        self.country = None
+
+    def encode_associations(self, obj):
+        if isinstance(obj, CountryAdminUnitType):
+            return obj.__dict__
+        if isinstance(obj, Country):
+            return obj.__dict__
+        return obj
+
+    def __repr__(self):
+        return self.name + ', ' + self.urduName + ', ' + self.parent.name + ', ' + self.country.name

@@ -9,6 +9,7 @@ import accommodation_status
 import profession
 import employment_status
 import religion
+import country_admin_unit_type
 
 
 # country.import_countries()
@@ -20,5 +21,6 @@ import religion
 # accommodation_type.import_accommodation_types()
 # accommodation_status.import_accommodation_statuses()
 # profession.import_professions()
-employment_status.import_employment_statuses()
-religion.import_religions()
+# employment_status.import_employment_statuses()
+# religion.import_religions()
+country_admin_unit_type.import_country_admin_unit_types()
