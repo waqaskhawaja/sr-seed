@@ -8,6 +8,7 @@ import accommodation_type
 import accommodation_status
 import profession
 import employment_status
+import religion
 
 
 # country.import_countries()
@@ -20,4 +21,4 @@ import employment_status
 # accommodation_status.import_accommodation_statuses()
 # profession.import_professions()
 employment_status.import_employment_statuses()
-
+religion.import_religions()

@@ -131,3 +131,13 @@ class EmploymentStatus:
 
     def __repr__(self):
         return self.name
+
+
+class Religion:
+
+    def __init__(self):
+        self.id = None
+        self.name = None
+
+    def __repr__(self):
+        return self.name
