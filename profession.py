@@ -29,7 +29,7 @@ def import_professions():
         next(reader, None)
         for data in reader:                        
             if get_profession_by_name(data[0].strip()) is None:
-                profession = {'name': data[0].strip()}
+                profession = {'name': data[0].strip().title()}
                 requests.post(base_url + '/api/professions', headers=headers, json=profession)
 
 
