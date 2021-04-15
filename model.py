@@ -91,3 +91,33 @@ class Caste:
 
     def __repr__(self):
         return self.name + ', ' + self.urduName + ', ' + self.parent.name
+
+
+class AccommodationStatus:
+
+    def __init__(self):
+        self.id = None
+        self.name = None
+
+    def __repr__(self):
+        return self.name
+
+
+class AccommodationType:
+
+    def __init__(self):
+        self.id = None
+        self.name = None
+
+    def __repr__(self):
+        return self.name
+
+
+class Profession:
+
+    def __init__(self):
+        self.id = None
+        self.name = None
+
+    def __repr__(self):
+        return self.name

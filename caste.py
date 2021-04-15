@@ -13,8 +13,6 @@ headers = {"Authorization": "Bearer " + id_token}
 def get_caste_by_name(caste_name):
     headers.update({'Content-Type': 'application/x-www-form-urlencoded'})
     local_response = requests.get(base_url + '/api/_search/castes', headers=headers, data={'query': caste_name})
-    print(local_response.request.headers)
-    print(local_response.request.body)
     if local_response.status_code != 500:
         local_response = local_response.json()
         if len(local_response) > 0 and local_response[0] is not None and local_response[0]['name'] == caste_name:
