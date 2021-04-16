@@ -172,3 +172,27 @@ class CountryAdminUnit:
 
     def __repr__(self):
         return self.name + ', ' + self.urduName + ', ' + self.parent.name + ', ' + self.countryAdminUnitType.name
+
+
+class City:
+
+    def __init__(self):
+        self.id = None
+        self.name = None
+        self.urduName = None
+        self.latitude = None
+        self.longitude = None
+        self.population = None
+        self.capital = None
+        self.country = None
+        self.adminUnit = None
+
+    def encode_associations(self, obj):
+        if isinstance(obj, Country):
+            return obj.__dict__
+        if isinstance(obj, CountryAdminUnit):
+            return obj.__dict__
+        return obj
+
+    def __repr__(self):
+        return self.name + ', ' + self.urduName

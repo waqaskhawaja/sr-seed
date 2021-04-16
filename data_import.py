@@ -11,6 +11,7 @@ import employment_status
 import religion
 import country_admin_unit_type
 import country_admin_unit
+import worldcities
 
 
 # country.import_countries()
@@ -25,4 +26,5 @@ import country_admin_unit
 # employment_status.import_employment_statuses()
 # religion.import_religions()
 # country_admin_unit_type.import_country_admin_unit_types()
-country_admin_unit.import_country_admin_unit()
+# country_admin_unit.import_country_admin_unit()
+worldcities.import_city()
