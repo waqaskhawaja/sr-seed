@@ -12,7 +12,7 @@ import religion
 import country_admin_unit_type
 import country_admin_unit
 import worldcities
-
+import sect
 
 # country.import_countries()
 # gender.import_genders()
@@ -27,4 +27,5 @@ import worldcities
 # religion.import_religions()
 # country_admin_unit_type.import_country_admin_unit_types()
 # country_admin_unit.import_country_admin_unit()
-worldcities.import_city()
+# worldcities.import_city()
+sect.import_sect()

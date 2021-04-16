@@ -196,3 +196,23 @@ class City:
 
     def __repr__(self):
         return self.name + ', ' + self.urduName
+
+
+class Sect:
+
+    def __init__(self):
+        self.id = None
+        self.name = None
+        self.urduName = None
+        self.parent = None
+        self.religion = None
+
+    def encode_associations(self, obj):
+        if isinstance(obj, Sect):
+            return obj.__dict__
+        if isinstance(obj, Religion):
+            return obj.__dict__
+        return obj
+
+    def __repr__(self):
+        return self.name + ', ' + self.urduName + ', ' + self.parent.name + ', ' + self.religion.name
