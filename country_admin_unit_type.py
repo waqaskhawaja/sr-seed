@@ -22,7 +22,7 @@ def get_country_admin_unit_type_by_name(country_admin_unit_type_name):
             country_admin_unit_type = CountryAdminUnitType()
             country_admin_unit_type.id = local_response[0]['id']
             country_admin_unit_type.name = local_response[0]['name']
-            country_admin_unit_type.name = local_response[0]['urduName']
+            country_admin_unit_type.urduName = local_response[0]['urduName']
             country_admin_unit_type.parent = local_response[0]['parent']
             country_admin_unit_type.country = local_response[0]['country']
             return country_admin_unit_type

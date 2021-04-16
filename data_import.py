@@ -10,6 +10,7 @@ import profession
 import employment_status
 import religion
 import country_admin_unit_type
+import country_admin_unit
 
 
 # country.import_countries()
@@ -23,4 +24,5 @@ import country_admin_unit_type
 # profession.import_professions()
 # employment_status.import_employment_statuses()
 # religion.import_religions()
-country_admin_unit_type.import_country_admin_unit_types()
+# country_admin_unit_type.import_country_admin_unit_types()
+country_admin_unit.import_country_admin_unit()

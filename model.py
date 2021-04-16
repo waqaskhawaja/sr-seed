@@ -8,16 +8,7 @@ class Country:
         self.addressUnitIdentifier = None
         
     def __repr__(self):
-        return self.name + ', ' + self.urduName + ', ' + self.isoCode 
-
-
-class CountryAdministrativeUnit:
-
-    def __init__(self):
-        self.id = None
-        self.name = None
-        self.country = None
-        self.parent = None
+        return self.name + ', ' + self.urduName + ', ' + self.isoCode
 
 
 # class City(Base):
@@ -161,3 +152,23 @@ class CountryAdminUnitType:
 
     def __repr__(self):
         return self.name + ', ' + self.urduName + ', ' + self.parent.name + ', ' + self.country.name
+
+
+class CountryAdminUnit:
+
+    def __init__(self):
+        self.id = None
+        self.name = None
+        self.urduName = None
+        self.parent = None
+        self.countryAdminUnitType = None
+
+    def encode_associations(self, obj):
+        if isinstance(obj, CountryAdminUnit):
+            return obj.__dict__
+        if isinstance(obj, CountryAdminUnitType):
+            return obj.__dict__
+        return obj
+
+    def __repr__(self):
+        return self.name + ', ' + self.urduName + ', ' + self.parent.name + ', ' + self.countryAdminUnitType.name
