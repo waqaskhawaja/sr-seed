@@ -23,7 +23,7 @@ hanjra,ہنجرا,Jatt
 cheema,چیمہ,Jatt
 bajwa,باجوہ,Jatt
 dev,دیو,Jatt
-ghuman,گھمن,Jatt
+ghumman,گھمن,Jatt
 kahlon,کاہلوں,Jatt
 saraye,سرائے,Jatt
 goraya,گورایہ,Jatt
@@ -64,6 +64,7 @@ sangwan,سانگوان,Jatt
 sahrawat,سہراوت,Jatt
 wehiya,ویہیا,Jatt
 goliya,گولیا,Jatt
+gondal, گوندل, Jatt
 raathi,راٹھی,Jatt
 khatri,کھتری,Jatt
 dalal,دلال,Jatt
@@ -174,7 +175,7 @@ Butt,بٹ,Kashmiri
 Rathore,راٹھور,Kashmiri
 Banday,بانڈے,Kashmiri
 Sheikh,شیخ,Kashmiri
-Gujjer,گجر,Punjabi
+Gujjar,گجر,Punjabi
 khatana,کھٹانہ,Gujjar
 bajar,بجاڑ,Gujjar
 cheechi,چیچی,Gujjar
@@ -240,6 +241,7 @@ kalas,کالس,Gujjar
 ,لغاری,Gujjar
 ,لاشاری,Gujjar
 Pashtoon,پشتون,
+Khan, خان, Pashtoon
 achakzai,اچکزئی,Pashtoon
 afridi,آفریدی,Pashtoon
 alizai,علیزئی,Pashtoon
@@ -280,10 +282,7 @@ yousafkhel,یوسف خیل,Pashtoon
 mahsod,محسود,Pashtoon
 burki,برکی,Pashtoon
 Saraiki,سرائیکی,
-ansari,انصاری,Saraiki
-awan,اعوان,Saraiki
 bhangar,بھنگر,Saraiki
-bhatti,بھٹی,Saraiki
 bukhari,بخاری,Saraiki
 chachar,چاچڑ,Saraiki
 chandio,چانڈیو,Saraiki
@@ -293,12 +292,10 @@ kalwar,کلوار,Saraiki
 khokhar,کھوکھر,Saraiki
 langah,لنگاہ,Saraiki
 makhdoom,مخدوم,Saraiki
-malik,ملک,Saraiki
 qureshi,قریشی,Saraiki
 rind,رند,Saraiki
 rawani,روانی,Saraiki
 shah,شاہ,Saraiki
-sial,سیال,Saraiki
 sapra,سپرا,Saraiki
 somro,سومرو,Saraiki
 tangwani,تنگوانی,Saraiki
@@ -485,3 +482,11 @@ Qureshi,قریشی,
 ,قطب شاہ,Qureshi
 ,کرار/ کہریار,Qureshi
 ,کھگے,Qureshi
+Mughal, مغل,
+Mochi, موچی,
+Rehmani, رحمانی,
+Ansari,انصاری,
+Baloch, بلوچ,
+Bugti, بگٹی, Baloch
+Malik, ملک,
+Sial, سیال,

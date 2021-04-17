@@ -15,7 +15,8 @@ def get_caste_by_name(caste_name):
     local_response = requests.get(base_url + '/api/_search/castes', headers=headers, data={'query': caste_name})
     if local_response.status_code != 500:
         local_response = local_response.json()
-        if len(local_response) > 0 and local_response[0] is not None and local_response[0]['name'] == caste_name:
+        if len(local_response) > 0 and local_response[0] is not None \
+                and (local_response[0]['name']).lower() == caste_name.lower():
             caste = Caste()
             caste.id = local_response[0]['id']
             caste.name = local_response[0]['name']
