@@ -16,7 +16,7 @@ def get_profession_by_name(profession_name):
     if local_response.status_code != 500:
         local_response = local_response.json()
         if len(local_response) > 0 and local_response[0] is not None \
-                and local_response[0]['name'] == profession_name:
+                and (local_response[0]['name']).lower() == profession_name.lower():
             profession = Profession()
             profession.id = local_response[0]['id']
             profession.name = local_response[0]['name']
