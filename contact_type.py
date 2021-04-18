@@ -16,7 +16,7 @@ def get_contact_type_by_name(contact_type_name):
     if local_response.status_code != 500:
         local_response = local_response.json()
         if len(local_response) > 0 and local_response[0] is not None \
-                and local_response[0]['name'] == contact_type_name:
+                and (local_response[0]['name']).lower() == contact_type_name.lower():
             contact_type = ContactType()
             contact_type.id = local_response[0]['id']
             contact_type.name = local_response[0]['name']
