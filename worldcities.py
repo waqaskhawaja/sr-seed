@@ -19,7 +19,7 @@ def get_city_by_name(city_name):
     if local_response.status_code != 500:
         local_response = local_response.json()
         if len(local_response) > 0 and local_response[0] is not None \
-                and local_response[0]['name'] == city_name:
+                and (local_response[0]['name']).lower() == city_name.lower():
             city = City()
             city.id = local_response[0]['id']
             city.name = local_response[0]['name']
