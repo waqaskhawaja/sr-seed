@@ -17,7 +17,7 @@ hanas,ہانس,Jatt
 khagga,کھگہ,Jatt
 jhandeer,جھندیر,Jatt
 tarar,تارڑ,Jatt
-waraich,وڑائچ,Jatt
+warraich,وڑائچ,Jatt
 sahi,ساہی,Jatt
 hanjra,ہنجرا,Jatt
 cheema,چیمہ,Jatt
@@ -41,7 +41,7 @@ oddi,اوڈی,Jatt
 bal,بل,Jatt
 punnon,پنوں,Jatt
 mahal,ماہل,Jatt
-olakh,اولکھ,Jatt
+Olakh,اولکھ,Jatt
 gill,گل,Jatt
 sidhu,سدھو,Jatt
 barar,برار,Jatt
@@ -105,6 +105,8 @@ nay pal,نے پال,Jatt
 rathi,راٹھی,Jatt
 dharewal,دھاریوال,Jatt
 Rajpoot,راجپوت,Punjabi
+Wattoo, وٹو, Rajpoot
+Rana, رانا, Rajpoot
 tanwar,تنوار,Rajpoot
 chohan,چوہان,Rajpoot
 mandahar,منداہار,Rajpoot
@@ -242,6 +244,7 @@ kalas,کالس,Gujjar
 ,لاشاری,Gujjar
 Pashtoon,پشتون,
 Khan, خان, Pashtoon
+Pathan, پٹھان, Pashtoon
 achakzai,اچکزئی,Pashtoon
 afridi,آفریدی,Pashtoon
 alizai,علیزئی,Pashtoon
@@ -252,7 +255,7 @@ esakhel,عیسی خیل,Pashtoon
 jadon,جدون,Pashtoon
 kakakhel,کاکاخیل,Pashtoon
 kakyzai,ککےزئی,Pashtoon
-khatak,خٹک,Pashtoon
+khattak,خٹک,Pashtoon
 khizerkhel,خضرخیل,Pashtoon
 khakwani,خاکوانی,Pashtoon
 lodhi,لودھی,Pashtoon
@@ -266,7 +269,7 @@ noorzai,نورزئی,Pashtoon
 orakzai,اورکزئی,Pashtoon
 popalzai,پوپلزئی,Pashtoon
 sawati,سواتی,Pashtoon
-saduzai,سدوزئی,Pashtoon
+sadozai,سدوزئی,Pashtoon
 salarzai,سالارزئی,Pashtoon
 sulemani,سلیمانی,Pashtoon
 sulemankhel,سلیمان خیل,Pashtoon
@@ -490,3 +493,10 @@ Baloch, بلوچ,
 Bugti, بگٹی, Baloch
 Malik, ملک,
 Sial, سیال,
+Syed, سید,
+Kamboh, کمبوہ,
+Nai, نائی,
+Mirza, مرزا,
+Dreshak, دریشک, Baloch
+Kurdish, کردش,
+Lak, لک, Kurdish
