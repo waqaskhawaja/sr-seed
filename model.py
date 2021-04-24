@@ -234,12 +234,12 @@ class Contact:
         self.id = None
         self.contact = None
         self.contactType = None
-        self.candidate = None
+        self.person = None
 
     def encode_associations(self, obj):
         if isinstance(obj, ContactType):
             return obj.__dict__
-        if isinstance(obj, Candidate):
+        if isinstance(obj, Person):
             return obj.__dict__
 
 
@@ -253,12 +253,12 @@ class EducationDetails:
         self.educationLevel = None
         self.educationalInstitute = None
         self.educationCertTitle = None
-        self.candidate = None
+        self.person = None
 
     def encode_associations(self, obj):
         if isinstance(obj, EducationLevel):
             return obj.__dict__
-        if isinstance(obj, Candidate):
+        if isinstance(obj, Person):
             return obj.__dict__
 
 
@@ -276,6 +276,14 @@ class Address:
             return obj.__dict__
 
 
+class PersonRelationshipType:
+
+    def __init__(self):
+        self.id = None
+        self.name = None
+        self.urduName = None
+
+
 class AccommodationDetails:
 
     def __init__(self):
@@ -287,7 +295,7 @@ class AccommodationDetails:
         self.accommodationStatus = None
         self.accommodationType = None
         self.address = None
-        self.candidate = None
+        self.person = None
 
     def encode_associations(self, obj):
         if isinstance(obj, AccommodationStatus):
@@ -296,11 +304,11 @@ class AccommodationDetails:
             return obj.__dict__
         if isinstance(obj, Address):
             return obj.__dict__
-        if isinstance(obj, Candidate):
+        if isinstance(obj, Person):
             return obj.__dict__
 
 
-class Candidate:
+class Person:
 
     def __init__(self):
         self.id = None
@@ -333,6 +341,8 @@ class Candidate:
         self.employmentDetails = None
         self.addresses = None
         self.profession = None
+        self.candidate = True
+        self.candidateContact = True
 
     def encode_associations(self, obj):
         if isinstance(obj, AccommodationDetails):
@@ -392,7 +402,7 @@ class Preferences:
         self.cities = None
         self.educationLevels = None
         self.castes = None
-        self.candidate = None
+        self.person = None
 
     def encode_associations(self, obj):
         # print('Preferences ' + str(type(obj)))
