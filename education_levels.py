@@ -11,16 +11,17 @@ headers = {"Authorization": "Bearer " + id_token}
 
 
 def get_education_level_by_name(education_level_name):
-    local_response = requests.get(base_url + '/api/_search/education-levels', headers=headers,
-                                  data={'query': education_level_name})
-    if local_response.status_code != 500:
-        local_response = local_response.json()
-        if len(local_response) > 0 and local_response[0] is not None \
-                and local_response[0]['name'] == education_level_name:
-            education_level = EducationLevel()
-            education_level.id = local_response[0]['id']
-            education_level.name = local_response[0]['name']
-            return education_level
+    if education_level_name is not None and education_level_name != '':
+        local_response = requests.get(base_url + '/api/_search/education-levels', headers=headers,
+                                      data={'query': education_level_name})
+        if local_response.status_code != 500:
+            local_response = local_response.json()
+            if len(local_response) > 0 and local_response[0] is not None \
+                    and local_response[0]['name'] == education_level_name:
+                education_level = EducationLevel()
+                education_level.id = local_response[0]['id']
+                education_level.name = local_response[0]['name']
+                return education_level
 
 
 def import_education_levels():

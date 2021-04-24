@@ -1,5 +1,4 @@
 Name,Male,Mobile #,Age ,Matric,,Cast,Siblings Bro + sis,House ,City ,Job / Business ,Monthly Income ,Religion / Sect ,Age  limit,Education ,Preferences,Cast,Religion / Sect,Location ,Comments 
-,Female,3224035905,27,,,Butt,4,Own,Lahore,electrical machanic,,Sunni,Any,,,,,,
 Jabbar Anjum,Male,3115026680,32,BA/BSc/B.com,Single,Rajpoot,4,Own,Gujar Khan,Driver,"70,000",Sunni,25-30,Min Matric,Single,Any Cast,Sunni,Any City,
 Muhammad Taj,Male,3459760625,40,BA/BSc/B.com,Married,Gujjar,6,Own,Kashmir,army,"90,000",Sunni,Any,Min Matric,Can Marry with Divorce,Any Cast,Sunni,Any City,
 Imran Lak,Male,3084008211,26,BA/BSc/B.com,Single,Lak,5,Own,Sargodha,ocl as manager,"170,000",Sunni,Any,Min Bs/Master,Single,Any Cast,Sunni,Lahore,
@@ -661,7 +660,8 @@ ibrar,Male,3461735385,24,Matric,Single,Mughal,4,Own,Faisalabad,electrical work,3
 Aziz,Male,3124206523,36,FA/FSc/DAE,Divorced,Rajpoot,7,Own,Karachi,dubai,2000000,Sunni,25-30,No Edu Requires,Can Marry with Divorce,Same Cast,Sunni,Near My City,
 Daniyal amjad,Male,3008060759,25,FA/FSc/DAE,Single,Mughal,2,Own,Lahore,workshop,30000,Sunni,20-25,Min FA/FSc,Single,Same Cast,Sunni,Near My City,
 saba,Female,3325391183,28,MBBS,Single,Gujjar,3,Own,Lahore,,,Sunni,25-30,Min Bs/Master,Single,Same Cast,Sunni,Lahore,
-"muhammad amir",Male,3003963015,26,FA/FSc/DAE,Single,mehar,3,Own,Multan,,,Sunni,20-25,Min FA/FSc,Single,Any Cast,Sunni,Any City,
+"muhammad amir
+",Male,3003963015,26,FA/FSc/DAE,Single,mehar,3,Own,Multan,,,Sunni,20-25,Min FA/FSc,Single,Any Cast,Sunni,Any City,
 Muhammad shahzad,Male,3077075753,26,Under Matric,Single,Arain,10,Own,Lahore,farming,,Sunni,20-25,No Edu Requires,No Requirement,Same Cast,Sunni,Near My City,
 sonia,Female,3057667365,25,BA/BSc/B.com,Single,Rajpoot,5,Own,Vihari,private job,-,Sunni,20-25,Min Bs/Master,Single,Same Cast,Sunni,Same City,
 Muhammad arif,Male,3477962324,28,Matric,Divorced,Arain,3,Own,Toba Tek Singh,farming,20000,Sunni,20-25,No Edu Requires,Can Marry with Divorce,Any Cast,Sunni,Any City,
@@ -1158,7 +1158,8 @@ Abid Jatt,Male,3448877274,28,Under Matric,Single,Jatt,8,Own,Faisalabad,property 
 Kashif,Male,3315760316,35,Matric,Divorced,Khokhar,7,Own,Chakwal,business,60000,Sunni,25-30,No Edu Requires,Can Marry with Divorce,Any Cast,Sunni,Same City,
 muhammad adnan,Male,3006485400,28,FA/FSc/DAE,Single,Rehmani,4,Own,Gujranwala,business,50000,Sunni,20-25,Min FA/FSc,Single,Same Cast,Sunni,Same City,
 Waheed baig,Male,3016445986,28,Under Matric,Single,,7,Own,Narowal,Hozri workshop,25000,Sunni,25-30,No Edu Requires,Single,Any Cast,Sunni,Any City,
-Syed Usman Bukhari,Male,3214062688,30,BA/BSc/B.com,Single,Syed,6,Own,Lahore,"export import work",45000,Syed Sunni,20-25,No Edu Requires,Single,Any Cast,Sunni,Lahore,
+Syed Usman Bukhari,Male,3214062688,30,BA/BSc/B.com,Single,Syed,6,Own,Lahore,"export import work
+",45000,Syed Sunni,20-25,No Edu Requires,Single,Any Cast,Sunni,Lahore,
 naeem,Male,3041636674,35,BA/BSc/B.com,Married,,,Own,Sialkot,company job,35000,Sunni,25-30,No Edu Requires,No Requirement,Any Cast,Sunni,Any City,
 Irfan ali,Male,3004624706,30,FA/FSc/DAE,Married,Gujjar,5,Own,Gujrat,Restuarant owner,100000,Sunni,25-30,Min Bs/Master,No Requirement,Same Cast,Sunni,Same City,
 qasim Jatt,Male,3466216985,23,Matric,Single,Jatt,4,Own,Sialkot,mechanic,35000,Sunni,20-25,No Edu Requires,No Requirement,Same Cast,Sunni,Same City,non serious
@@ -1299,7 +1300,8 @@ M.Noman,Male,3344494282,30,FA/FSc/DAE,Single,Jatt,6,Own,Gujranwala,Working in So
 M.Akmal,Male,3333034120,22,Under Matric,Single,Gujjar,3,Own,Gujrat,Working in Dubai,150000,Sunni,20-25,Min FA/FSc,Single,Same Cast,Sunni,Near My City,
 Qari Waqar,Male,3016181047,28,Matric,Married,Rajpoot,,Own,Sialkot,Online Quran Teacher,60000,Sunni,25-30,Min Matric,Can Marry with Divorce,Any Cast,Sunni,Any City,Widower is also acceptable with 1 kid
 Imran,Male,3459900744,22,Under Matric,Single,Rajpoot,0,Own,Kashmir,chef,30000,Sunni,20-25,Min Matric,Single,Any Cast,Sunni,Same City,must from kashmir
-Saiqa Noreen,Female,3350406545,30,Bs/Master,Single,Arain,5,Own,Lahore,"teaching",35000,Sunni,35-40,Min Bs/Master,Single,Any Cast,Sunni,Lahore,
+Saiqa Noreen,Female,3350406545,30,Bs/Master,Single,Arain,5,Own,Lahore,"teaching
+",35000,Sunni,35-40,Min Bs/Master,Single,Any Cast,Sunni,Lahore,
 Naqqash,Male,3006116874,25,Matric,Single,Hashmi,5,Own,Gujranwala,Electrician,50000,Sunni,20-25,Min Matric,Single,Same Cast,Sunni,Near My City,Looking for reasonable people. Lady expert in households
 Qadeer Ahmed,Male,3127114653,Below 20,Matric,Single,Mughal,3,Own,Sialkot,building line,35000,Sunni,20-25,Min Matric,Single,Same Cast,Sunni,Near My City,
 Hamza Nawaz,Male,3127114653,24,FA/FSc/DAE,Single,Mughal,3,Own,Sialkot,contractor,40000,Sunni,20-25,Min FA/FSc,Single,Same Cast,Sunni,Near My City,
@@ -1650,7 +1652,8 @@ muhammad ali,Male,3415312980,22,Under Matric,Single,Bhatti,7,Own,Khanewal,painti
 Muhammad Nawaz,Male,3426772016,27,FA/FSc/DAE,Single,Rajpoot,4,Own,Lahore,electrician,35000,Sunni,20-25,Min Matric,Single,Any Cast,Sunni,Near My City,should not be gujjar aran or Jatt
 Chand shafique,Male,3004773003,38,Matric,Married,Rajpoot,3,Own,Lahore,govt contractor,60000,Sunni,30-35,Min Matric,Can Marry with Divorce,Any Cast,Sunni,Near My City,wife and kids lives separately in sheikhupura
 Muhammad Parvez,Male,3187170770,40,Matric,Married,Gujjar,6,Own,Lala Musa,transport business,800000,Sunni,30-35,Min Matric,Can Marry with Divorce,Same Cast,Sunni,Near My City,
-Mian ikram ,Male,3243945569,26,BA/BSc/B.com,Single,Arain,4,Own,Rahimyar Khan,"owns juice factory",300000,Sunni,Any,No Edu Requires,No Requirement,Any Cast,Sunni,Any City,
+Mian ikram ,Male,3243945569,26,BA/BSc/B.com,Single,Arain,4,Own,Rahimyar Khan,"owns juice factory
+",300000,Sunni,Any,No Edu Requires,No Requirement,Any Cast,Sunni,Any City,
 Ali zahid,Male,3007818129,27,Matric,Single,Sheikh,8,Own,Lahore,mobile repairing ,70000,Sunni,20-25,Min FA/FSc,Single,Any Cast,Sunni,Near My City,
 Abdul Sami khan,Male,3004643967,29,FA/FSc/DAE,Single,Arain,8,Own,Rahimyar Khan,UAE,100000,Sunni,20-25,Min FA/FSc,Single,Any Cast,Sunni,Near My City,
 Abdul Qadir,Male,3451471285,32,Bs/Master,Married,Baloch,,Own,Rahimyar Khan,army,45000,Sunni,25-30,Min FA/FSc,Can Marry with Divorce,Any Cast,Sunni,Any City,
@@ -1915,7 +1918,8 @@ Muhammad Shoaib ,Male,3338687251,35,Bs/Master,Single,Mughal,2,,Sialkot,business 
 Sajjad Ahmad Butt ,Male,3005392993,45,Matric,Divorced,Butt,,,,transport business ,"100,000",,30-35,Min Matric,Can Marry with Divorce,Any Cast,,Any City,
 Tabasum ,Female,302 4852241,Below 20,MBBS,Single,Rajpoot,,,Lahore,,,,20-25,Min Bs/Master,Single,Same Cast,,Any City,
 Amir Muneer ,Male,3435379280,40,,Divorced,Arain,,,,,"30,000",,30-35,No Edu Requires,Can Marry with Divorce,Any Cast,,Any City,
-Shahzad,Male,3117572846,22,Matric,Single,kamboh,4,Own,Okara,"private job in factory",30000,Sunni,20-25,No Edu Requires,Single,Any Cast,Sunni,Near My City,
+Shahzad,Male,3117572846,22,Matric,Single,kamboh,4,Own,Okara,"private job in factory
+",30000,Sunni,20-25,No Edu Requires,Single,Any Cast,Sunni,Near My City,
 Fatima ,Female,3324667277,26,Bs/Master,Single,Pathan,3,,Lahore,,,,25-30,Min Bs/Master,Single,Same Cast,,Any City,
 anjam,Male,3340400410,30,Matric,Single,Ansari,6,Own,Gujranwala,electronic work,30000,Sunni,20-25,No Edu Requires,Single,Any Cast,Sunni,Any City,
 Jamshaid ,Male,3338469262,40,Bs/Master,Married,,,,Gujrat,professor ,"120,000",Sunni,,Min Bs/Master,Can Marry with Divorce,,,,
@@ -1925,7 +1929,8 @@ Malik mohsin ,Male,3008564686,30,Matric,Single,Malik,,,Gujranwala,own factory ,"
 Nafees ,Male,3226461816,30,Matric,Single,Rajpoot,,,Gujrat,,"20,000",,,,,,,,
 nadeem abbas ,Male,3458884007,26,FA/FSc/DAE,Single,Malik,6,Own,Kharian,owns medical laboratory,100000,Sunni,20-25,Min FA/FSc,Single,Same Cast,Sunni,Near My City,
 Muhamad umar ,Male,3234668080,29,BA/BSc/B.com,Single,Malik,,,,import export ,"70,000",,25-30,Min FA/FSc,Single,Any Cast,,Any City,
-Qasim Shahzad,Male,3004648638,32,Mphil,Divorced,Jatt,5,Own,Narowal,"teacher",50000,Sunni,25-30,Min Bs/Master,No Requirement,Any Cast,Sunni,Near My City,
+Qasim Shahzad,Male,3004648638,32,Mphil,Divorced,Jatt,5,Own,Narowal,"teacher
+",50000,Sunni,25-30,Min Bs/Master,No Requirement,Any Cast,Sunni,Near My City,
 Qadeer Mujahid ,Male,,36,Under Matric,Married,,,,Gujrat,own laundry shop ,"40,000",,30-35,No Edu Requires,No Requirement,Any Cast,,Any City,
 masood ali,Male,3002500576,24,Bs/Master,Single,Jatt,4,Own,Hafizabad,operation manager,70000,Sunni,25-30,No Edu Requires,Single,Any Cast,Sunni,,out of country
 Aroosa ,Female,3006209424,27,Matric,Single,Rajpoot,,,,,,,25-30,Min Matric,Single,Any Cast,,,
@@ -2031,7 +2036,8 @@ Muhmmad Hameed,Male,3003831033,24,,Married,,7,Own,Rahimyar Khan,owns business,10
 Muhammad asad,Male,3406911307,28,Under Matric,Single,Mughal,4,Own,Mandi Burewala,metal work,100000,Sunni,25-30,No Edu Requires,Single,Same Cast,Sunni,Near My City,
 Burhan ,Male,,29,Bs/Master,Single,Jatt,7,Rent,Kharian,Askari Bank Kahrian ,"30,000",Sunni,,,,,,,
 Naila mariyum ,Female,3015227694,28,Bs/Master,Single,Arain,3,Own,Bahawalnagar,principal,-,Sunni,25-30,Min FA/FSc,Single,Same Cast,Sunni,Same City,
-"syed nawazish ali bukhari",Male,3004099078,38,FA/FSc/DAE,Divorced,Syed,6,Own,Lahore,owns business vehicle ,70000,Syed Shia,25-30,No Edu Requires,No Requirement,Same Cast,Shia,Near My City,
+"syed nawazish ali bukhari
+",Male,3004099078,38,FA/FSc/DAE,Divorced,Syed,6,Own,Lahore,owns business vehicle ,70000,Syed Shia,25-30,No Edu Requires,No Requirement,Same Cast,Shia,Near My City,
 ghulam shabir ,Male,3006353623,24,Matric,Divorced,,9,Own,Khanewal,as a manager in a company ,35000,Sunni,20-25,No Edu Requires,Single,Any Cast,Sunni,Lahore,
 Sajid Jamil ,Male,3448815288,28,FA/FSc/DAE,Single,Rajpoot,4,,Kashmir,telenore salesman ,"30,000",,25-30,Min Matric,Single,Any Cast,Sunni,Any City,
 Muhammad Asif,Male,3064195377,28,Matric,Single,Arain,6,,Multan,,35000,,20-25,No Edu Requires,Single,Any Cast,,Any City,
@@ -2062,7 +2068,8 @@ waqas,Male,3082093063,22,FA/FSc/DAE,Single,Rajpoot,4,Own,Lahore,hotel manager,30
 Irfan Qayyom ,Male,3115467196,28,Under Matric,Single,Rajpoot,3,,New Mirpur,car rent business ,"100,000",Sunni,20-25,No Edu Requires,Single,Same Cast,Sunni,Any City,
 Muhammad Shoaib,Male,3006477010,30,Under Matric,Single,Rehmani,8,Own,Gujranwala,labor,25000,Sunni,25-30,No Edu Requires,Single,Same Cast,Sunni,Near My City,
 Shazma Jawed ,Female,308 6414606,22,BA/BSc/B.com,Single,Rajpoot,,Own,Gujranwala,,,Sunni,20-25,Minimum BA,Single,Same Cast,Sunni,Near My City,
-"Muhammad Jamil",Male,3127622669,30,BA/BSc/B.com,Single,Jatt,4,Own,Kashmir,Dubai work in security,100000,Sunni,25-30,No Edu Requires,Single,Same Cast,Sunni,Any City,
+"Muhammad Jamil
+",Male,3127622669,30,BA/BSc/B.com,Single,Jatt,4,Own,Kashmir,Dubai work in security,100000,Sunni,25-30,No Edu Requires,Single,Same Cast,Sunni,Any City,
 Ali khokhar ,Male,,30,Under Matric,Single,Khokhar,,Own,Mirpur,,"20,000",Sunni,25-30,No Edu Requires,Single,Any Cast,Sunni,Any City,
 Ali zafar,Male,3235074228,27,Bs/Master,Single,Syed,2,Own,Lahore,propety dealer,100000,Sunni,20-25,Min Bs/Master,Single,Any Cast,Sunni,Near My City,
 Syeda Hina Batol ,Female,3436301224,28,Bs/Master,Single,Syed,5,,Sialkot,,,Shia,25-30,Min Bs/Master,Single,Same Cast,Shia,Near My City,
@@ -2196,7 +2203,8 @@ Muhammad Irfan,Male,3451788007,28,FA/FSc/DAE,Single,,1,Own,Jhang,driver,35000,Su
 adil,Male,3214576512,28,FA/FSc/DAE,Single,Rajpoot,5,Own,Lahore,private school job,40000,Sunni,20-25,Min FA/FSc,Single,Any Cast,Any,Lahore,
 Muhammad Waqar,Male,3089491988,31,FA/FSc/DAE,Divorced,Arain,5,Rent,Sialkot,clerk,28000,Sunni,20-25,No Edu Requires,Can Marry with Divorce,Any Cast,Sunni,Near My City,
 Suleman ali,Male,3401932951,24,BA/BSc/B.com,Single,Pathan,6,Own,Peshawar,computer operator,170000,Sunni,20-25,No Edu Requires,Single,Any Cast,Sunni,Near My City,pathan
-ubaidullah,Male,3023525212,23,BA/BSc/B.com,Single,Bhatti,0,Own,Sahiwal,"medical rap",30000,Sunni,20-25,No Edu Requires,Single,Any Cast,Sunni,Any City,
+ubaidullah,Male,3023525212,23,BA/BSc/B.com,Single,Bhatti,0,Own,Sahiwal,"medical rap
+",30000,Sunni,20-25,No Edu Requires,Single,Any Cast,Sunni,Any City,
 Riasat naz,Male,3475877719,27,Matric,Single,Malik,5,Own,Abbottabad,salon,40000,Sunni,20-25,Min Matric,Single,Any Cast,Sunni,Near My City,
 Mujeeb ,Male,3082209593,28,BA/BSc/B.com,Single,Arain,9,Own,Rahimyar Khan,owns store,25000,Sunni,20-25,Min FA/FSc,Single,Any Cast,Sunni,Near My City,
 umair,Male,3330981148,30,Under Matric,Single,Pathan,6,Own,Nowshera,army job,35000,Sunni,25-30,Min FA/FSc,Single,Any Cast,Sunni,Any City,
@@ -2605,7 +2613,8 @@ Abdul Rauf,Male,3067565825,28,Under Matric,Single,,4,Own,Shekhupura,driver,35000
 Muhammad Mir khan,Male,3418078288,Above 45,,Widow,Pathan,,Own,Bannu,police retired,15000,Sunni,45-50,No Edu Requires,Can Marry with Divorce,Same Cast,Sunni,Near My City,
 Ali sahib,Male,3457897161,28,Bs/Master,Single,,2,Own,Khushab,teacher,23000,Sunni,20-25,Min Bs/Master,Single,Any Cast,Sunni,Near My City,
 Ali akbar,Male,3403425053,24,Under Matric,Single,Ansari,7,Own,Toba Tek Singh,electrical foreman,"60,000",Sunni,20-25,Min Matric,Single,Any Cast,Sunni,Near My City,
-"usman",Male,3030138457,25,Matric,Single,Arain,6,Own,Okara,owns mobile shop,70000,Sunni,20-25,Min Matric,Single,Same Cast,Sunni,Any City,
+"usman
+",Male,3030138457,25,Matric,Single,Arain,6,Own,Okara,owns mobile shop,70000,Sunni,20-25,Min Matric,Single,Same Cast,Sunni,Any City,
 Maryam Mughal,Female,923244101022,24,BA/BSc/B.com,Single,Mughal,6,Own,Lahore,teacher,,Ahl e Hadith,25-30,Min FA/FSc,Single,Same Cast,Ahl e Hadith,Lahore,
 Muhammad Mehtab,Male,3048981025,24,Matric,Single,Malik,5,Own,Rawalpindi,security guard,24000,Sunni,20-25,Min Matric,Single,Any Cast,Sunni,Near My City,
 Muhammad sajjad,Male,3048981025,27,BA/BSc/B.com,Single,Malik,5,Own,Rawalpindi,supervisor,21000,Sunni,20-25,Min Matric,Single,Any Cast,Sunni,Near My City,
@@ -2621,7 +2630,8 @@ Mahammad rafeeq khan,Male,3446933288,40,Matric,Divorced,Pathan,4,Own,Mianwali,ar
 Mohammad Hasnain,Male,3000127280,26,Matric,Single,janjua,7,Own,Jhang,construction work,30000,Sunni,20-25,No Edu Requires,Single,Any Cast,Sunni,Any City,
 Shahid Nadeem,Male,317 7255249,28,Matric,Widow,Butt,,Rent,Gujrat,crokery store employee,40000,Sunni,25-30,Min Matric,Can Marry with Divorce,Any Cast,Sunni,Near My City,2 kids
 ansar,Male,3442106014,23,Bs/Master,Single,Baloch,2,Own,Mianwali,ASI,60000,Sunni,25-30,Doctor,Single,Any Cast,Sunni,Any City,
-"asif ali",Male,3129863723,27,FA/FSc/DAE,Divorced,Rajpoot,3,Own,Bhurewala,data enter job,30000,Sunni,20-25,No Edu Requires,No Requirement,Any Cast,Sunni,Any City,lahore sy na ho
+"asif ali
+",Male,3129863723,27,FA/FSc/DAE,Divorced,Rajpoot,3,Own,Bhurewala,data enter job,30000,Sunni,20-25,No Edu Requires,No Requirement,Any Cast,Sunni,Any City,lahore sy na ho
 baqir,Male,3336125367,24,,Single,Baloch,7,Own,Dera Ghazi Khan,construction work,100000,Sunni,20-25,No Edu Requires,Single,Any Cast,Any,Any City,
 Atiq Ashraf,Male,923466719250,30,Matric,Single,Jatt,6,Own,Sialkot,driver,150000,Sunni,20-25,Min Matric,Single,Same Cast,Sunni,Near My City,
 ,Female,3007103105,25,Bs/Master,Single,Syed,5,Own,Sialkot,,,Syed Shia,25-30,Min Bs/Master,Single,Same Cast,Shia,Near My City,living in pasroor city
@@ -2936,7 +2946,8 @@ Zahid hashmi,Male,3129341853,42,FA/FSc/DAE,Widow,Hashmi,10,Own,Kashmir,driver,,S
 Nasir Iqbal,Male,923008815957,35,FA/FSc/DAE,Single,Arain,5,Own,Kasur,chicken seller,"30,000",Sunni,25-30,Min FA/FSc,Single,Same Cast,Sunni,Near My City,
 Ashir Jatt,Male,923006398902,25,FA/FSc/DAE,Single,Jatt,8,Own,Faisalabad,transport buisness,60000,Sunni,20-25,Min Matric,Single,Same Cast,Sunni,Near My City,
 Khuram yasir,Male,300 4624833,23,Bs/Master,Single,Rajpoot,6,Own,Kasur,branch manager,,Sunni,20-25,Min Bs/Master,Single,Any Cast,Sunni,Near My City,
-"saddam hussain",Male,3246824567,28,M.Phil.,Single,Malik,9,Own,Gojra,lecturer,90000,Sunni,20-25,Min Bs/Master,Single,Any Cast,Sunni,Any City,
+"saddam hussain
+",Male,3246824567,28,M.Phil.,Single,Malik,9,Own,Gojra,lecturer,90000,Sunni,20-25,Min Bs/Master,Single,Any Cast,Sunni,Any City,
 Saeedullah ,Male,3358541303,31,Matric,Single,Awan,5,Own,Rawalpindi,own shop ,mini 45000,Sunni,20-25,No Edu Requires,Single,Same Cast,Sunni,Any City,
 usman haider,Male,340 5646906,23,Bs/Master,Single,Chohan,8,Own,Hafizabad,,,Sunni,20-25,Min Matric,Single,Any Cast,Sunni,Near My City,
 Muhammad Arslan,Male,3035219215,29,BA/BSc/B.com,Single,Gujjar,4,Own,Rawalpindi,manager,35000,Sunni,25-30,No Edu Requires,Single,Any Cast,Sunni,,from out of country

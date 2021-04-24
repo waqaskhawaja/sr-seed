@@ -233,8 +233,8 @@ class Contact:
     def __init__(self):
         self.id = None
         self.contact = None
-        self.candidate = None
         self.contactType = None
+        self.candidate = None
 
     def encode_associations(self, obj):
         if isinstance(obj, ContactType):
@@ -253,6 +253,27 @@ class EducationDetails:
         self.educationLevel = None
         self.educationalInstitute = None
         self.educationCertTitle = None
+        self.candidate = None
+
+    def encode_associations(self, obj):
+        if isinstance(obj, EducationLevel):
+            return obj.__dict__
+        if isinstance(obj, Candidate):
+            return obj.__dict__
+
+
+class Address:
+
+    def __init__(self):
+        self.addressLineOne = None
+        self.addressLineTwo = None
+        self.addressUnitIdentifierValue = None
+        self.cityArea = None
+        self.city = None
+
+    def encode_associations(self, obj):
+        if isinstance(obj, City):
+            return obj.__dict__
 
 
 class AccommodationDetails:
@@ -265,6 +286,18 @@ class AccommodationDetails:
         self.residentSince = None
         self.accommodationStatus = None
         self.accommodationType = None
+        self.address = None
+        self.candidate = None
+
+    def encode_associations(self, obj):
+        if isinstance(obj, AccommodationStatus):
+            return obj.__dict__
+        if isinstance(obj, AccommodationType):
+            return obj.__dict__
+        if isinstance(obj, Address):
+            return obj.__dict__
+        if isinstance(obj, Candidate):
+            return obj.__dict__
 
 
 class Candidate:
@@ -286,7 +319,7 @@ class Candidate:
         self.weight = None
         self.nativeLanguage = None
         self.incomeCurrency = None
-        self.contacts = None
+        self.contact = None
         self.preferences = None
         self.accommodationDetails = None
         self.religion = None
@@ -299,14 +332,12 @@ class Candidate:
         self.nationalities = None
         self.employmentDetails = None
         self.addresses = None
-        self.residenceCity = None
         self.profession = None
 
     def encode_associations(self, obj):
-        # print('Candidate ' + str(type(obj)))
-        if isinstance(obj, Contact):
-            return obj.__dict__
         if isinstance(obj, AccommodationDetails):
+            return obj.__dict__
+        if isinstance(obj, AccommodationStatus):
             return obj.__dict__
         if isinstance(obj, Religion):
             return obj.__dict__
@@ -332,6 +363,10 @@ class Candidate:
             return obj.__dict__
         if isinstance(obj, Preferences):
             return obj.__dict__
+        if isinstance(obj, Contact):
+            return obj.__dict__
+        if isinstance(obj, ContactType):
+            return obj.__dict__
         return obj
 
     def __repr__(self):
@@ -356,6 +391,7 @@ class Preferences:
         self.countries = None
         self.cities = None
         self.educationLevels = None
+        self.castes = None
         self.candidate = None
 
     def encode_associations(self, obj):
@@ -379,5 +415,7 @@ class Preferences:
         if isinstance(obj, City):
             return obj.__dict__
         if isinstance(obj, EducationLevel):
+            return obj.__dict__
+        if isinstance(obj, Caste):
             return obj.__dict__
         return obj

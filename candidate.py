@@ -1,6 +1,7 @@
+import accommodation_status
 from config import base_url, auth_params
 from model import Candidate, Contact, EducationDetails, Preferences
-from model import AccommodationDetails
+from model import AccommodationDetails, Address
 import contact_type
 import marital_status
 import caste
@@ -11,30 +12,15 @@ import religion
 import sect
 import education_levels
 import employment_status
+import accommodation_status
 import csv
 import requests
 import json
+import re
 
 response = requests.post(base_url + '/api/authenticate', json=auth_params)
 id_token = (json.loads(response.text))['id_token']
 headers = {"Authorization": "Bearer " + id_token}
-
-
-# def get_candidate_by_name_and_phone_number(candidate_name, candidate_phone_number):
-#     headers.update({'Content-Type': 'application/x-www-form-urlencoded'})
-#     local_response = requests.get(base_url + '/api/_search/candidates', headers=headers,
-#                                   data={'query': candidate_name + candidate_phone_number})
-#     if local_response.status_code != 500:
-#         local_response = local_response.json()
-#         if len(local_response) > 0 and local_response[0] is not None \
-#                 and local_response[0]['name'] == candidate_name:
-# country_admin_unit = CountryAdminUnit()
-# country_admin_unit.id = local_response[0]['id']
-# country_admin_unit.name = local_response[0]['name']
-# country_admin_unit.urduName = local_response[0]['urduName']
-# country_admin_unit.countryAdminUnitType = local_response[0]['countryAdminUnitType']
-# country_admin_unit.parent = local_response[0]['parent']
-# return country_admin_unit
 
 
 def import_candidate():
@@ -42,37 +28,30 @@ def import_candidate():
         reader = csv.reader(files)
         next(reader, None)
         for data in reader:
+            headers.update({'Content-Type': 'application/json'})
             # if get_candidate_by_phone_number(data[2].strip()) is None:
             candidate_gender = None
-            candidate_contact = Contact()
-            candidate_education_details = EducationDetails()
             candidate_marital_status = None
             candidate_caste = None
-            candidate_accommodation_details = AccommodationDetails()
             candidate_profession = None
             candidate_religion = None
             candidate_sect = None
+            candidate_age = None
             if data[1] is not None:
                 candidate_gender = gender.get_gender_by_name(data[1].strip())
-            if data[2] is not None:
-                candidate_contact.contactType = contact_type.get_contact_type_by_name('Phone')
-                candidate_contact.contact = data[2]
-            if data[4] is not None:
-                candidate_education_level = map_education_level(data[4].strip())
-                candidate_education_details.educationLevel = candidate_education_level
+            if data[3] is not None:
+                if data[3] == 'Above 45':
+                    candidate_age = 45
+                elif data[3] == 'Below 20':
+                    candidate_age = 20
+                else:
+                    candidate_age = data[3]
             if data[5] is not None:
                 candidate_marital_status = marital_status.get_marital_status_by_name(data[5].strip())
             if data[6] is not None:
                 candidate_caste = caste.get_caste_by_name(data[6].strip())
                 if candidate_caste is None and data[6].strip() is not None and data[6].strip() != '':
                     print(data[6] + ' caste not found.')
-            if data[8] is not None:
-                candidate_accommodation_status = map_accommodation_status(data[8].strip())
-                candidate_accommodation_details.accommodationStatus = candidate_accommodation_status
-            if data[9] is not None:
-                candidate_city = worldcities.get_city_by_name(data[9].strip())
-                if candidate_city is None and data[9].strip() is not None and data[9].strip() != '':
-                    print(data[9] + ' city not found.')
             if data[10] is not None:
                 candidate_profession = profession.get_profession_by_name(data[10].strip())
                 if candidate_profession is None and data[10].strip() is not None and data[10].strip() != '':
@@ -85,28 +64,25 @@ def import_candidate():
 
             candidate = Candidate()
             candidate.name = data[0].strip().title()
-            # candidate.contacts = candidate_contact
             candidate.gender = candidate_gender
-            candidate.age = data[3].strip()
-            candidate.educationDetails = candidate_education_details
+            candidate.age = candidate_age
             candidate.maritalStatus = candidate_marital_status
             candidate.caste = candidate_caste
             candidate.siblings = data[7].strip()
-            candidate.accommodationDetails = candidate_accommodation_details
-            candidate.residenceCity = candidate_city
             candidate.profession = candidate_profession
-            candidate.monthlyIncome = data[11].strip()
+            candidate.monthlyIncome = re.sub("[^0-9]", "", data[11].strip())
             candidate.religion = candidate_religion
             candidate.sect = candidate_sect
+            if data[19].strip() is not None:
+                candidate.comments = data[19].strip()
 
             preferences = Preferences()
 
             if data[13] is not None and data[13] != '':
-                # print('data[13]' + data[13])
                 preferred_age = map_preferences_age(data[13].strip(), candidate.age)
                 preferences.minAge = preferred_age['minAge']
                 preferences.maxAge = preferred_age['maxAge']
-            if data[14] is not None:
+            if data[14] is not None and data[14].strip() != '':
                 preferred_education_levels = []
                 for preferred_education_item in map_preferred_education_level(data[14].strip()):
                     preferred_education_levels \
@@ -123,19 +99,100 @@ def import_candidate():
                         preferred_marital_statuses \
                             .append(marital_status.get_marital_status_by_name(preferred_marital_status_item))
                 preferences.maritalStatuses = preferred_marital_statuses
+            if data[16] is not None and data[16].strip() == 'Same Cast':
+                preferences.castes = [candidate.caste]
+            if data[17] is not None:
+                if data[17].strip() != 'Any':
+                    preferences.sects = [sect.get_sect_by_name(map_candidate_sect(data[17]))]
+            if data[18] is not None:
+                preferred_cities = []
+                if data[18] == 'Same City':
+                    try:
+                        preferred_cities.append(candidate.accommodationDetails.address.city)
+                    except AttributeError:
+                        preferred_cities.append(None)
+                else:
+                    preferred_cities.append(worldcities.get_city_by_name(data[18].strip()))
+
+            preferences_json = json.dumps(preferences.__dict__,
+                                          default=preferences.encode_associations)
+            preferences_response = requests.post(base_url + '/api/preferences', headers=headers, data=preferences_json)
+            preferences.id = (preferences_response.json())['id']
 
             candidate.preferences = preferences
 
             candidate_json = json.dumps(candidate.__dict__,
-                                    default=candidate.encode_associations)
+                                        default=candidate.encode_associations)
+            local_response = requests.post(base_url + '/api/candidates', headers=headers, data=candidate_json)
 
-            # preferences_json = json.dumps(preferences.__dict__,
-            #                             default=preferences.encode_associations)
+            # create candidate relationships
+            if local_response.status_code == 201:
+                candidate.id = (local_response.json())['id']
+                # create candidate contact
+                if data[2] is not None and data[2].strip() != '':
+                    create_candidate_contact(candidate, data[2].strip())
+                # create candidate education details
+                if data[4] is not None and data[4].strip() != '':
+                    candidate_education_level = education_levels. \
+                        get_education_level_by_name(map_education_level(data[4].strip()))
+                    create_candidate_education_details(candidate, candidate_education_level)
+                # create candidate accommodation
+                if data[8] is not None or data[9] is not None:
+                    candidate_accommodation_status = None
+                    candidate_city = None
+                    if data[8] is not None:
+                        candidate_accommodation_status = accommodation_status \
+                            .get_accommodation_status_by_name(map_accommodation_status(data[8].strip()))
+                    if data[9] is not None:
+                        candidate_city = worldcities.get_city_by_name(data[9].strip())
+                    create_candidate_accommodation_details(candidate, candidate_accommodation_status, candidate_city)
 
-            # candidate_json.update({"preferences", preferences_json})
 
-            headers.update({'Content-Type': 'application/json'})
-            # requests.post(base_url + '/api/candidates', headers=headers, data=candidate_json)
+def create_candidate_contact(candidate, phone_number):
+    candidate_contact = Contact()
+    candidate_contact.contactType = contact_type.get_contact_type_by_name('Phone')
+    candidate_contact.contact = phone_number
+    candidate_contact.candidate = candidate
+    candidate_contact_json = json.dumps(candidate_contact.__dict__,
+                                        default=candidate_contact.encode_associations)
+    requests.post(base_url + '/api/contacts', headers=headers, data=candidate_contact_json)
+
+
+def create_candidate_education_details(candidate, candidate_education_level):
+    candidate_education_details = EducationDetails()
+    candidate_education_details.educationLevel = candidate_education_level
+    candidate_education_details.candidate = candidate
+    candidate_education_details_json = json.dumps(candidate_education_details.__dict__,
+                                                  default=candidate_education_details.encode_associations)
+    requests.post(base_url + '/api/education-details', headers=headers, data=candidate_education_details_json)
+
+
+def create_candidate_accommodation_details(candidate, candidate_accommodation_status, candidate_city):
+    candidate_accommodation_details = AccommodationDetails()
+    candidate_address = Address()
+    candidate_address.city = candidate_city
+    candidate_address_json = json.dumps(candidate_address.__dict__,
+                                        default=candidate_address.encode_associations)
+    address_response = requests.post(base_url + '/api/addresses', headers=headers, data=candidate_address_json)
+    candidate_address.id = (address_response.json())['id']
+
+    candidate_accommodation_details.address = candidate_address
+    candidate_accommodation_details.accommodationStatus = candidate_accommodation_status
+    candidate_accommodation_details.candidate = candidate
+    candidate_accommodation_details_json = json.dumps(candidate_accommodation_details.__dict__,
+                                                      default=candidate_accommodation_details.encode_associations)
+    requests.post(base_url + '/api/accommodation-details', headers=headers, data=candidate_accommodation_details_json)
+
+
+def map_preferred_marital_status_level(csv_preferred_marital_statuses):
+    if csv_preferred_marital_statuses == 'No Requirement':
+        return []
+    elif csv_preferred_marital_statuses == 'Can Marry with Divorce':
+        return ["Divorced"]
+    elif csv_preferred_marital_statuses == 'Single':
+        return ["Single"]
+    else:
+        return []
 
 
 def map_preferred_marital_status_level(csv_preferred_marital_statuses):
@@ -165,7 +222,7 @@ def map_preferences_age(csv_preferences_age, candidate_age):
     elif csv_preferences_age == 'Any':
         return {'minAge': candidate_age, 'maxAge': candidate_age}
     else:
-        return {}
+        return {'minAge': '', 'maxAge': ''}
 
 
 def map_candidate_sect(csv_sect):
