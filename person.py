@@ -1,4 +1,4 @@
-import accommodation_status
+from dateutil.relativedelta import relativedelta
 from config import base_url, auth_params
 from model import Person, Contact, EducationDetails, Preferences
 from model import AccommodationDetails, Address
@@ -17,6 +17,7 @@ import csv
 import requests
 import json
 import re
+import datetime
 
 response = requests.post(base_url + '/api/authenticate', json=auth_params)
 id_token = (json.loads(response.text))['id_token']
@@ -29,7 +30,6 @@ def import_person():
         next(reader, None)
         for data in reader:
             headers.update({'Content-Type': 'application/json'})
-            # if get_person_by_phone_number(data[2].strip()) is None:
             person_gender = None
             person_marital_status = None
             person_caste = None
@@ -65,7 +65,7 @@ def import_person():
             person = Person()
             person.name = data[0].strip().title()
             person.gender = person_gender
-            person.age = person_age
+            # person.dateOfBirth = datetime.datetime.now() - relativedelta(years=int(person_age))
             person.maritalStatus = person_marital_status
             person.caste = person_caste
             person.siblings = data[7].strip()
@@ -79,7 +79,7 @@ def import_person():
             preferences = Preferences()
 
             if data[13] is not None and data[13] != '':
-                preferred_age = map_preferences_age(data[13].strip(), person.age)
+                preferred_age = map_preferences_age(data[13].strip(), person_age)
                 preferences.minAge = preferred_age['minAge']
                 preferences.maxAge = preferred_age['maxAge']
             if data[14] is not None and data[14].strip() != '':
@@ -114,16 +114,15 @@ def import_person():
                 else:
                     preferred_cities.append(worldcities.get_city_by_name(data[18].strip()))
 
+            person_json = json.dumps(person.__dict__,
+                                     default=person.encode_associations)
+            local_response = requests.post(base_url + '/api/people', headers=headers, data=person_json)
+            person.id = (local_response.json())['id']
+            person.preferences = preferences
+
             preferences_json = json.dumps(preferences.__dict__,
                                           default=preferences.encode_associations)
             preferences_response = requests.post(base_url + '/api/preferences', headers=headers, data=preferences_json)
-            preferences.id = (preferences_response.json())['id']
-
-            person.preferences = preferences
-
-            person_json = json.dumps(person.__dict__,
-                                        default=person.encode_associations)
-            local_response = requests.post(base_url + '/api/people', headers=headers, data=person_json)
 
             # create person relationships
             if local_response.status_code == 201:

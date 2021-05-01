@@ -1,3 +1,7 @@
+import datetime
+import json
+
+
 class Country:
 
     def __init__(self):
@@ -313,42 +317,30 @@ class Person:
     def __init__(self):
         self.id = None
         self.name = None
-        self.urduName = None
-        self.age = None
-        self.dateOfBirth = None
+        self.candidate = True
+        self.candidateContact = True
         self.siblings = None
+        self.dateOfBirth = None
         self.brothers = None
         self.sisters = None
         self.monthlyIncome = None
-        self.comments = None
         self.registered = None
         self.registrationDate = None
         self.height = None
         self.weight = None
         self.nativeLanguage = None
-        self.incomeCurrency = None
-        self.contact = None
-        self.preferences = None
-        self.accommodationDetails = None
+        self.comments = None
         self.religion = None
         self.sect = None
         self.caste = None
+        self.incomeCurrency = None
         self.gender = None
         self.maritalStatus = None
-        self.employmentStatus = None
-        self.educationDetails = None
-        self.nationalities = None
-        self.employmentDetails = None
-        self.addresses = None
         self.profession = None
-        self.candidate = True
-        self.candidateContact = True
+
 
     def encode_associations(self, obj):
-        if isinstance(obj, AccommodationDetails):
-            return obj.__dict__
-        if isinstance(obj, AccommodationStatus):
-            return obj.__dict__
+        print('Person ' + str(type(obj)))
         if isinstance(obj, Religion):
             return obj.__dict__
         if isinstance(obj, Sect):
@@ -359,28 +351,12 @@ class Person:
             return obj.__dict__
         if isinstance(obj, MaritalStatus):
             return obj.__dict__
-        if isinstance(obj, EmploymentStatus):
-            return obj.__dict__
-        if isinstance(obj, EducationLevel):
-            return obj.__dict__
         if isinstance(obj, Country):
             return obj.__dict__
         if isinstance(obj, Profession):
             return obj.__dict__
-        if isinstance(obj, EducationDetails):
-            return obj.__dict__
-        if isinstance(obj, City):
-            return obj.__dict__
-        if isinstance(obj, Preferences):
-            return obj.__dict__
-        if isinstance(obj, Contact):
-            return obj.__dict__
-        if isinstance(obj, ContactType):
-            return obj.__dict__
+        print('returning obj ' + str(type(obj)))
         return obj
-
-    def __repr__(self):
-        return self.name + ', ' + self.urduName + ', ' + self.parent.name + ', ' + self.religion.name
 
 
 class Preferences:
@@ -427,5 +403,7 @@ class Preferences:
         if isinstance(obj, EducationLevel):
             return obj.__dict__
         if isinstance(obj, Caste):
+            return obj.__dict__
+        if isinstance(obj, Person):
             return obj.__dict__
         return obj
