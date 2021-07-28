@@ -117,8 +117,12 @@ def import_person():
             person_json = json.dumps(person.__dict__,
                                      default=person.encode_associations)
             local_response = requests.post(base_url + '/api/people', headers=headers, data=person_json)
-            person.id = (local_response.json())['id']
-            person.preferences = preferences
+            person.id = (local_response.json())['id']            
+            
+            preferences_person = Person()
+            preferences_person.id = person.id
+            
+            preferences.person = preferences_person
 
             preferences_json = json.dumps(preferences.__dict__,
                                           default=preferences.encode_associations)
