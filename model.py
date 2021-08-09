@@ -312,6 +312,53 @@ class AccommodationDetails:
             return obj.__dict__
 
 
+class Preferences:
+
+    def __init__(self):
+        self.id = None
+        self.minAge = None
+        self.maxAge = None
+        self.comments = None
+        self.minIncome = None
+        self.employmentStatuses = None
+        self.professions = None
+        self.accommodationTypes = None
+        self.accommodationStatuses = None
+        self.maritalStatuses = None
+        self.sects = None
+        self.religions = None
+        self.countries = None
+        self.cities = None
+        self.educationLevels = None
+        self.castes = None
+
+    def encode_associations(self, obj):
+        # print('Preferences ' + str(type(obj)))
+        if isinstance(obj, EmploymentStatus):
+            return obj.__dict__
+        if isinstance(obj, Profession):
+            return obj.__dict__
+        if isinstance(obj, AccommodationType):
+            return obj.__dict__
+        if isinstance(obj, AccommodationStatus):
+            return obj.__dict__
+        if isinstance(obj, MaritalStatus):
+            return obj.__dict__
+        if isinstance(obj, Sect):
+            return obj.__dict__
+        if isinstance(obj, Religion):
+            return obj.__dict__
+        if isinstance(obj, Country):
+            return obj.__dict__
+        if isinstance(obj, City):
+            return obj.__dict__
+        if isinstance(obj, EducationLevel):
+            return obj.__dict__
+        if isinstance(obj, Caste):
+            return obj.__dict__        
+        # print('returning obj ' + str(type(obj)))
+        return obj
+
 class Person:
 
     def __init__(self):
@@ -337,10 +384,11 @@ class Person:
         self.gender = None
         self.maritalStatus = None
         self.profession = None
-
+        self.preferences = None
+        self.city = None
 
     def encode_associations(self, obj):
-        print('Person ' + str(type(obj)))
+        # print('Person ' + str(type(obj)))
         if isinstance(obj, Religion):
             return obj.__dict__
         if isinstance(obj, Sect):
@@ -354,56 +402,9 @@ class Person:
         if isinstance(obj, Country):
             return obj.__dict__
         if isinstance(obj, Profession):
-            return obj.__dict__
-        print('returning obj ' + str(type(obj)))
-        return obj
-
-
-class Preferences:
-
-    def __init__(self):
-        self.id = None
-        self.minAge = None
-        self.maxAge = None
-        self.comments = None
-        self.minIncome = None
-        self.employmentStatuses = None
-        self.professions = None
-        self.accommodationTypes = None
-        self.accommodationStatuses = None
-        self.maritalStatuses = None
-        self.sects = None
-        self.religions = None
-        self.countries = None
-        self.cities = None
-        self.educationLevels = None
-        self.castes = None
-        self.person = None
-
-    def encode_associations(self, obj):
-        # print('Preferences ' + str(type(obj)))
-        if isinstance(obj, EmploymentStatus):
-            return obj.__dict__
-        if isinstance(obj, Profession):
-            return obj.__dict__
-        if isinstance(obj, AccommodationType):
-            return obj.__dict__
-        if isinstance(obj, AccommodationStatus):
-            return obj.__dict__
-        if isinstance(obj, MaritalStatus):
-            return obj.__dict__
-        if isinstance(obj, Sect):
-            return obj.__dict__
-        if isinstance(obj, Religion):
-            return obj.__dict__
-        if isinstance(obj, Country):
-            return obj.__dict__
+            return obj.__dict__        
+        if isinstance(obj, Preferences):
+            return obj.__dict__        
         if isinstance(obj, City):
-            return obj.__dict__
-        if isinstance(obj, EducationLevel):
-            return obj.__dict__
-        if isinstance(obj, Caste):
-            return obj.__dict__
-        if isinstance(obj, Person):
-            return obj.__dict__
+            return obj.__dict__        
         return obj

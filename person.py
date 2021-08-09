@@ -19,6 +19,9 @@ import json
 import re
 import datetime
 
+# 1990-10-17T11:27:00.000Z
+# 2021-08-07T23:00:00.000Z
+
 response = requests.post(base_url + '/api/authenticate', json=auth_params)
 id_token = (json.loads(response.text))['id_token']
 headers = {"Authorization": "Bearer " + id_token}
@@ -37,6 +40,7 @@ def import_person():
             person_religion = None
             person_sect = None
             person_age = None
+            person_city = None
             if data[1] is not None:
                 person_gender = gender.get_gender_by_name(data[1].strip())
             if data[3] is not None:
@@ -52,6 +56,8 @@ def import_person():
                 person_caste = caste.get_caste_by_name(data[6].strip())
                 if person_caste is None and data[6].strip() is not None and data[6].strip() != '':
                     print(data[6] + ' caste not found.')
+            if data[9] is not None:
+                person_city = worldcities.get_city_by_name(data[9].strip())
             if data[10] is not None:
                 person_profession = profession.get_profession_by_name(data[10].strip())
                 if person_profession is None and data[10].strip() is not None and data[10].strip() != '':
@@ -65,7 +71,8 @@ def import_person():
             person = Person()
             person.name = data[0].strip().title()
             person.gender = person_gender
-            # person.dateOfBirth = datetime.datetime.now() - relativedelta(years=int(person_age))
+            if person.dateOfBirth is not None:
+                person.dateOfBirth = (datetime.datetime.now(datetime.timezone.utc) - relativedelta(years=int(person_age))).isoformat()            
             person.maritalStatus = person_marital_status
             person.caste = person_caste
             person.siblings = data[7].strip()
@@ -73,6 +80,7 @@ def import_person():
             person.monthlyIncome = re.sub("[^0-9]", "", data[11].strip())
             person.religion = person_religion
             person.sect = person_sect
+            person.city = person_city
             if data[19].strip() is not None:
                 person.comments = data[19].strip()
 
@@ -114,19 +122,16 @@ def import_person():
                 else:
                     preferred_cities.append(worldcities.get_city_by_name(data[18].strip()))
 
-            person_json = json.dumps(person.__dict__,
-                                     default=person.encode_associations)
-            local_response = requests.post(base_url + '/api/people', headers=headers, data=person_json)
-            person.id = (local_response.json())['id']            
-            
-            preferences_person = Person()
-            preferences_person.id = person.id
-            
-            preferences.person = preferences_person
-
             preferences_json = json.dumps(preferences.__dict__,
                                           default=preferences.encode_associations)
             preferences_response = requests.post(base_url + '/api/preferences', headers=headers, data=preferences_json)
+            preferences.id = (preferences_response.json())['id']            
+            
+            person.preferences = Preferences()
+            person.preferences.id = preferences.id
+            person_json = json.dumps(person.__dict__,
+                                     default=person.encode_associations)
+            local_response = requests.post(base_url + '/api/people', headers=headers, data=person_json)
 
             # create person relationships
             if local_response.status_code == 201:
@@ -145,9 +150,7 @@ def import_person():
                     person_city = None
                     if data[8] is not None:
                         person_accommodation_status = accommodation_status \
-                            .get_accommodation_status_by_name(map_accommodation_status(data[8].strip()))
-                    if data[9] is not None:
-                        person_city = worldcities.get_city_by_name(data[9].strip())
+                            .get_accommodation_status_by_name(map_accommodation_status(data[8].strip()))                    
                     create_person_accommodation_details(person, person_accommodation_status, person_city)
 
 
