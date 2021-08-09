@@ -71,7 +71,7 @@ def import_person():
             person = Person()
             person.name = data[0].strip().title()
             person.gender = person_gender
-            if person.dateOfBirth is not None:
+            if person_age is not None and person_age != "":
                 person.dateOfBirth = (datetime.datetime.now(datetime.timezone.utc) - relativedelta(years=int(person_age))).isoformat()            
             person.maritalStatus = person_marital_status
             person.caste = person_caste
