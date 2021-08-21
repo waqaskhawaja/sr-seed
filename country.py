@@ -18,17 +18,31 @@ headers = {"Authorization": "Bearer " + id_token}
 # response = requests.get(base_url + '/api/countries', headers=headers)
 
 
+def map_country_from_json(country_json):    
+            country = Country()
+            country.id = country_json[0]['id']
+            country.name = country_json[0]['name']
+            country.isoCode = country_json[0]['isoCode']
+            country.urduName = country_json[0]['urduName']
+            country.addressUnitIdentifier = country_json[0]['addressUnitIdentifier']
+            return country
+
+
+
+def get_country_by_iso_code(country_iso_code):
+    local_response = requests.get(base_url + '/api/_search/countries', headers=headers, data={'query': country_iso_code})
+    if local_response.status_code != 500:
+        local_response = local_response.json()
+        if len(local_response) > 0 and local_response[0] is not None and local_response[0]['isoCode'] == country_iso_code:
+            country = map_country_from_json(local_response)
+            return country
+
 def get_country_by_name(country_name):
     local_response = requests.get(base_url + '/api/_search/countries', headers=headers, data={'query': country_name})
     if local_response.status_code != 500:
         local_response = local_response.json()
         if len(local_response) > 0 and local_response[0] is not None and local_response[0]['name'] == country_name:
-            country = Country()
-            country.id = local_response[0]['id']
-            country.name = local_response[0]['name']
-            country.isoCode = local_response[0]['isoCode']
-            country.urduName = local_response[0]['urduName']
-            country.addressUnitIdentifier = local_response[0]['addressUnitIdentifier']
+            country = map_country_from_json(local_response)
             return country
 
 

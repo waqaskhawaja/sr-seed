@@ -15,11 +15,15 @@ import worldcities
 import sect
 import contact_type
 import person
+import currency
+import country_currency
 import person_relationship_type
 
 
 # person_relationship_type.import_person_relationship_type()
+# currency.import_currencies()
 # country.import_countries()
+country_currency.import_country_currency()
 # gender.import_genders()
 # marital_status.import_marital_statuses()
 # education_levels.import_education_levels()
@@ -35,4 +39,4 @@ import person_relationship_type
 # worldcities.import_city()
 # sect.import_sect()
 # contact_type.import_contact_types()
-person.import_person()
+# person.import_person()

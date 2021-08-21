@@ -10,6 +10,12 @@ class Country:
         self.urduName = None
         self.isoCode = None
         self.addressUnitIdentifier = None
+        self.currency = None
+
+    def encode_associations(self, obj):
+        if isinstance(obj, Currency):
+            return obj.__dict__
+        return obj
         
     def __repr__(self):
         return self.name + ', ' + self.urduName + ', ' + self.isoCode
@@ -139,13 +145,13 @@ class CountryAdminUnitType:
         self.name = None
         self.urduName = None
         self.parent = None
-        self.country = None
+        self.country = None        
 
     def encode_associations(self, obj):
         if isinstance(obj, CountryAdminUnitType):
             return obj.__dict__
         if isinstance(obj, Country):
-            return obj.__dict__
+            return obj.__dict__        
         return obj
 
     def __repr__(self):
