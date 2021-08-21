@@ -18,8 +18,6 @@ def import_country_currency():
         reader = csv.DictReader(files)
         next(reader, None)
         for data in reader:            
-            if data["CountryCode"] == 'AU':
-                print('australia')
             country_obj = country.get_country_by_iso_code(data["CountryCode"])
             currency_obj = currency.get_currency_by_code(data["Code"])
             if country_obj is not None and currency_obj is not None:

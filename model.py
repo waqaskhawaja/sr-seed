@@ -247,9 +247,32 @@ class Contact:
             return obj.__dict__
 
 
+class EducationalInstituteType:
+
+    def __innt__(self):
+        self.id = None
+        self.name = None        
+    
+
+class EducationalInstitute:
+
+    def __innt__(self):
+        self.id = None
+        self.name = None
+        self.country = None
+        self.educationInstituteType = None
+
+    def encode_associations(self, obj):
+        if isinstance(obj, Country):
+            return obj.__dict__
+        if isinstance(obj, EducationalInstituteType):
+            return obj.__dict__
+
+
 class EducationDetails:
 
     def __init__(self):
+        self.id = None
         self.startYear = None
         self.endYear = None
         self.grade = None
