@@ -27,10 +27,11 @@ def import_professions():
     with open("./csv/professions.csv", encoding='utf-8') as files:
         reader = csv.reader(files)
         next(reader, None)
-        for data in reader:                        
-            if get_profession_by_name(data[0].strip()) is None:
-                profession = {'name': data[0].strip().title()}
-                requests.post(base_url + '/api/professions', headers=headers, json=profession)
-
-
-
+        for data in reader:
+            try:
+                if data is not None and data[0] is not None and data[0].strip() is not None and get_profession_by_name(data[0].strip()) is None:                                            
+                    profession = {'name': data[0].strip().title()}
+                    requests.post(base_url + '/api/professions',
+                                headers=headers, json=profession)
+            except IndexError:
+                print(data)

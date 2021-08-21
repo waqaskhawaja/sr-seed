@@ -15,30 +15,24 @@ class Country:
         return self.name + ', ' + self.urduName + ', ' + self.isoCode
 
 
-# class City(Base):
-    
-    
-#     id = Column(Integer, primary_key=True)
-#     name = Column(String)    
-#     urdu_name = Column(String)
-#     country_administrative_unit_id = Column(Integer, ForeignKey("country_administrative_unit.id"))
-    
-
-# class CityArea(Base):
-    
-    
-#     id = Column(Integer, primary_key=True)
-#     name = Column(String)    
-#     urdu_name = Column(String)
-#     city_id = Column(Integer, ForeignKey("city.id"))
-
-
 class Gender:
 
     def __init__(self):
         self.id = None
         self.name = None
         self.urduName = None
+
+    def __repr__(self):
+        return self.name + ', ' + self.urduName
+
+
+class Currency:
+
+    def __init__(self):
+        self.id = None
+        self.name = None
+        self.urduName = None
+        self.code = None
 
     def __repr__(self):
         return self.name + ', ' + self.urduName
@@ -364,6 +358,8 @@ class Person:
     def __init__(self):
         self.id = None
         self.name = None
+        self.created_at = None
+        self.updated_at = None
         self.candidate = True
         self.candidateContact = True
         self.siblings = None
