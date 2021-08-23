@@ -71,8 +71,8 @@ def import_person():
 
             person = Person()
             person.name = data["Name"].strip().title()
-            person.created_at = person_date_data.isoformat()
-            person.updated_at = person_date_data.isoformat()
+            person.createdAt = person_date_data.strftime('%Y-%m-%dT%H:%M:%S.%fZ')
+            person.updatedAt = person_date_data.strftime('%Y-%m-%dT%H:%M:%S.%fZ')
             person.gender = person_gender
             if person_age is not None and person_age != "":
                 person.dateOfBirth = (datetime.datetime.now(datetime.timezone.utc) - relativedelta(years=int(person_age))).isoformat()
@@ -89,8 +89,8 @@ def import_person():
 
             preferences = Preferences()
 
-            if data["Age req."] is not None and data["Age req."] != '':
-                preferred_age = map_preferences_age(data["Age req."].strip(), person_age)
+            if data["Age Req"] is not None and data["Age Req"] != '':
+                preferred_age = map_preferences_age(data["Age Req"].strip(), person_age)
                 preferences.minAge = preferred_age['minAge']
                 preferences.maxAge = preferred_age['maxAge']
             if data["Education Req"] is not None and data["Education Req"].strip() != '':

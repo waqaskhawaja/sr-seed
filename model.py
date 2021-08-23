@@ -387,8 +387,8 @@ class Person:
     def __init__(self):
         self.id = None
         self.name = None
-        self.created_at = None
-        self.updated_at = None
+        self.createdAt = None
+        self.updatedAt = None
         self.candidate = True
         self.candidateContact = True
         self.siblings = None
