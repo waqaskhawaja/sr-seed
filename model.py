@@ -32,6 +32,66 @@ class Gender:
         return self.name + ', ' + self.urduName
 
 
+class CandidateStatusType:
+
+    def __init__(self):
+        self.id = None
+        self.name = None        
+
+    def __repr__(self):
+        return self.name
+
+
+class CandidateStatus:
+
+    def __init__(self):
+        self.id = None
+        self.createdAt = None
+        self.updatedAt = None
+        self.candidateStatusType = None
+        self.person = None
+
+    def encode_associations(self, obj):
+        if isinstance(obj, CandidateStatusType):
+            return obj.__dict__
+        if isinstance(obj, Person):
+            return obj.__dict__
+        return obj
+
+
+class CityArea:
+
+    def __init__(self):
+        self.id = None
+        self.name = None
+        self.urduName = None
+        self.city = None        
+
+    def encode_associations(self, obj):
+        if isinstance(obj, City):
+            return obj.__dict__        
+        return obj
+
+
+class LanguageProficiency:
+
+    def __init__(self):
+        self.id = None
+        self.name = None
+        self.level = None       
+
+
+class Language:
+
+    def __init__(self):
+        self.id = None
+        self.name = None
+        self.nativeName = None
+        self.code6391 = None
+        self.code6392T = None
+        self.code6392B = None
+
+
 class Currency:
 
     def __init__(self):
@@ -190,6 +250,7 @@ class City:
         self.capital = None
         self.country = None
         self.adminUnit = None
+        self.residenceMeasurementUnit = None
 
     def encode_associations(self, obj):
         if isinstance(obj, Country):
