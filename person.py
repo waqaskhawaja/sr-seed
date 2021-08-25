@@ -1,7 +1,7 @@
 from dateutil.relativedelta import relativedelta
 from config import base_url, auth_params
 from model import Person, Contact, EducationDetails, Preferences
-from model import AccommodationDetails, Address
+from model import AccommodationDetails, Address, CandidateStatus
 import contact_type
 import marital_status
 import caste
@@ -18,6 +18,7 @@ import requests
 import json
 import re
 import datetime
+import candidate_status_type
 
 response = requests.post(base_url + '/api/authenticate', json=auth_params)
 id_token = (json.loads(response.text))['id_token']
@@ -38,10 +39,19 @@ def import_person():
             person_sect = None
             person_age = None
             person_city = None
+            person_status = None
+            person_registration_date = None            
+            if data["Registration Date"] is not None and data["Registration Date"] != '':
+                try: 
+                    person_registration_date = datetime.datetime.strptime(data["Registration Date"],"%Y-%m-%d")
+                except ValueError:
+                    person_registration_date = datetime.datetime.strptime(data["Registration Date"],"%d-%m-%Y")
             person_date_data = datetime.datetime(2020, 10, 1, 9, 00)
-            if data["Date"] is not None and data["Date"] != '':
-                # todo: doesn't populate in DB, may be adding timezome info will help
-                person_date_data = datetime.datetime.strptime(data["Date"],"%Y-%m-%d")                        
+            if data["Date"] is not None and data["Date"] != '':                
+                try:
+                    person_date_data = datetime.datetime.strptime(data["Date"],"%Y-%m-%d")                        
+                except ValueError:
+                    person_date_data = datetime.datetime.strptime(data["Date"],"%m/%d/%Y")                        
             if data["Gender"] is not None:
                 person_gender = gender.get_gender_by_name(data["Gender"].strip())
             if data["Age"] is not None:
@@ -72,7 +82,7 @@ def import_person():
             person = Person()
             person.name = data["Name"].strip().title()
             person.createdAt = person_date_data.strftime('%Y-%m-%dT%H:%M:%S.%fZ')
-            person.updatedAt = person_date_data.strftime('%Y-%m-%dT%H:%M:%S.%fZ')
+            person.updatedAt = person_date_data.strftime('%Y-%m-%dT%H:%M:%S.%fZ')            
             person.gender = person_gender
             if person_age is not None and person_age != "":
                 person.dateOfBirth = (datetime.datetime.now(datetime.timezone.utc) - relativedelta(years=int(person_age))).isoformat()
@@ -86,6 +96,11 @@ def import_person():
             person.city = person_city
             if data["Comments"].strip() is not None:
                 person.comments = data["Comments"].strip()
+            if person_registration_date is not None:
+                person.registrationDate = person_registration_date.strftime('%Y-%m-%dT%H:%M:%S.%fZ')
+                person.registered = True
+            if person_status is not None:
+                person.candidateStatus = person_status
 
             preferences = Preferences()
 
@@ -133,7 +148,7 @@ def import_person():
             person.preferences = Preferences()
             person.preferences.id = preferences.id
             person_json = json.dumps(person.__dict__,
-                                     default=person.encode_associations)
+                                     default=person.encode_associations)            
             local_response = requests.post(base_url + '/api/people', headers=headers, data=person_json)
 
             # create person relationships
@@ -155,6 +170,23 @@ def import_person():
                         person_accommodation_status = accommodation_status \
                             .get_accommodation_status_by_name(map_accommodation_status(data["House"].strip()))                    
                     create_person_accommodation_details(person, person_accommodation_status, person_city)
+                if data["Status"] is not None:
+                    candidate_status_type_local = candidate_status_type.get_candidate_status_type_by_name(data["Status"].strip())
+                    create_person_status(person, candidate_status_type_local)
+
+
+
+def create_person_status(person, candidate_status_type_local):
+    person_local = Person()
+    person_local.id = person.id
+    candidate_status = CandidateStatus()
+    candidate_status.candidateStatusType = candidate_status_type_local
+    candidate_status.createdAt = datetime.date.today().strftime('%Y-%m-%dT%H:%M:%S.%fZ')
+    candidate_status.updatedAt = datetime.date.today().strftime('%Y-%m-%dT%H:%M:%S.%fZ')
+    candidate_status.person = person_local
+    candidate_status_json = json.dumps(candidate_status.__dict__,
+                                        default=candidate_status.encode_associations)
+    requests.post(base_url + '/api/candidate-statuses', headers=headers, data=candidate_status_json)
 
 
 def create_person_contact(person, phone_number):

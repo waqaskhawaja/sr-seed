@@ -51,11 +51,11 @@ class CandidateStatus:
         self.candidateStatusType = None
         self.person = None
 
-    def encode_associations(self, obj):
+    def encode_associations(self, obj):        
         if isinstance(obj, CandidateStatusType):
             return obj.__dict__
         if isinstance(obj, Person):
-            return obj.__dict__
+            return obj.__dict__        
         return obj
 
 
@@ -472,6 +472,7 @@ class Person:
         self.profession = None
         self.preferences = None
         self.city = None
+        self.candidateStatus = None
 
     def encode_associations(self, obj):
         # print('Person ' + str(type(obj)))
@@ -493,4 +494,5 @@ class Person:
             return obj.__dict__        
         if isinstance(obj, City):
             return obj.__dict__        
+        # print('returning obj ' + str(type(obj)))
         return obj
