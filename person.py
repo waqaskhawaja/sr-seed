@@ -19,6 +19,7 @@ import json
 import re
 import datetime
 import candidate_status_type
+import phonenumbers
 
 response = requests.post(base_url + '/api/authenticate', json=auth_params)
 id_token = (json.loads(response.text))['id_token']
@@ -192,7 +193,8 @@ def create_person_status(person, candidate_status_type_local):
 def create_person_contact(person, phone_number):
     person_contact = Contact()
     person_contact.contactType = contact_type.get_contact_type_by_name('Phone')
-    person_contact.contact = phone_number
+    phone_number = phonenumbers.parse(phone_number, "PK")
+    person_contact.contact = phonenumbers.format_number(phone_number, phonenumbers.PhoneNumberFormat.E164)
     person_contact.person = person
     person_contact_json = json.dumps(person_contact.__dict__,
                                         default=person_contact.encode_associations)
