@@ -27,7 +27,7 @@ headers = {"Authorization": "Bearer " + id_token}
 
 
 def import_person():
-    with open("./csv/new_applicant_details.csv", encoding='utf-8') as files:
+    with open("./csv/applicant_details_28_08.csv", encoding='utf-8') as files:
         reader = csv.DictReader(files)
         next(reader, None)
         for data in reader:
@@ -47,6 +47,8 @@ def import_person():
                     person_registration_date = datetime.datetime.strptime(data["Registration Date"],"%Y-%m-%d")
                 except ValueError:
                     person_registration_date = datetime.datetime.strptime(data["Registration Date"],"%d-%m-%Y")
+                except ValueError:
+                    person_registration_date = datetime.datetime.strptime(data["Registration Date"],"%d/%m/%Y")
             person_date_data = datetime.datetime(2020, 10, 1, 9, 00)
             if data["Date"] is not None and data["Date"] != '':                
                 try:
