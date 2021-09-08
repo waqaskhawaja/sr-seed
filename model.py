@@ -173,10 +173,18 @@ class Profession:
     def __init__(self):
         self.id = None
         self.name = None
+        self.conceptUri = None
+        self.iscoGroup = None
+        self.description = None
+        self.parent = None
+    
+    def encode_parent(self, obj):
+        if isinstance(obj, Profession):
+            return obj.__dict__
+        return obj
 
     def __repr__(self):
         return self.name
-
 
 class EmploymentStatus:
 

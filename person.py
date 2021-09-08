@@ -27,7 +27,8 @@ headers = {"Authorization": "Bearer " + id_token}
 
 
 def import_person():
-    with open("./csv/applicant_details_28_08.csv", encoding='utf-8') as files:
+    # with open("./csv/applicant_details_28_08.csv", encoding='utf-8') as files:
+    with open("./csv/new_applicant_details.csv", encoding='utf-8') as files:
         reader = csv.DictReader(files)
         next(reader, None)
         for data in reader:
@@ -46,15 +47,23 @@ def import_person():
                 try: 
                     person_registration_date = datetime.datetime.strptime(data["Registration Date"],"%Y-%m-%d")
                 except ValueError:
-                    person_registration_date = datetime.datetime.strptime(data["Registration Date"],"%d-%m-%Y")
-                except ValueError:
-                    person_registration_date = datetime.datetime.strptime(data["Registration Date"],"%d/%m/%Y")
+                    try:
+                        person_registration_date = datetime.datetime.strptime(data["Registration Date"],"%d-%m-%Y")
+                    except ValueError:
+                        try:
+                            person_registration_date = datetime.datetime.strptime(data["Registration Date"],"%d/%m/%Y")
+                        except:
+                            print('Date parse error : ' + data["Registration Date"])
+
             person_date_data = datetime.datetime(2020, 10, 1, 9, 00)
             if data["Date"] is not None and data["Date"] != '':                
                 try:
                     person_date_data = datetime.datetime.strptime(data["Date"],"%Y-%m-%d")                        
                 except ValueError:
-                    person_date_data = datetime.datetime.strptime(data["Date"],"%m/%d/%Y")                        
+                    try:
+                        person_date_data = datetime.datetime.strptime(data["Date"],"%m/%d/%Y")
+                    except ValueError: 
+                        print('Unparsable date : ' + data["Date"])
             if data["Gender"] is not None:
                 person_gender = gender.get_gender_by_name(data["Gender"].strip())
             if data["Age"] is not None:
@@ -72,10 +81,8 @@ def import_person():
                 #     print(data["Caste"] + ' caste not found.')
             if data["City"] is not None:
                 person_city = worldcities.get_city_by_name(data["City"].strip())
-            if data["Profession"] is not None:
-                person_profession = profession.get_profession_by_name(data["Profession"].strip())
-                if person_profession is None and data["Profession"].strip() is not None and data["Profession"].strip() != '':
-                    print(data["Profession"] + ' profession not found.')
+            if data["Profession"] is not None:                
+                person_profession = data["Profession"]
             if data["Sect"] == 'Christian':
                 person_religion = religion.get_religion_by_name('Christianity')
             else:
@@ -91,14 +98,15 @@ def import_person():
                 person.dateOfBirth = (datetime.datetime.now(datetime.timezone.utc) - relativedelta(years=int(person_age))).isoformat()
             person.maritalStatus = person_marital_status
             person.caste = person_caste
-            person.siblings = data["Siblings"].strip()
-            person.profession = person_profession
+            person.siblings = data["Siblings"].strip()            
             person.monthlyIncome = re.sub("[^0-9]", "", data["Monthly Income"].strip())
             person.religion = person_religion
             person.sect = person_sect
             person.city = person_city
+            if person_profession is not None:
+                person.comments = str(data["Profession"]) +'\n\n' + str(person.comments)
             if data["Comments"].strip() is not None:
-                person.comments = data["Comments"].strip()
+                person.comments = str(data["Comments"].strip()) + str(person.comments)
             if person_registration_date is not None:
                 person.registrationDate = person_registration_date.strftime('%Y-%m-%dT%H:%M:%S.%fZ')
                 person.registered = True
