@@ -5,6 +5,7 @@ import country_admin_unit
 import csv
 import requests
 import json
+import residence_measurement_unit
 
 
 response = requests.post(base_url + '/api/authenticate', json=auth_params)
@@ -40,13 +41,16 @@ def import_city():
         reader = csv.reader(files)
         next(reader, None)
         for data in reader:
-            if data[4] == 'Pakistan' and get_city_by_name(data[0].strip()) is None:
+            if get_city_by_name(data[0].strip()) is None:
                 local_country = None
                 admin_unit = None
+                local_residence_measurement_unit = None
                 if data[4] is not None:
                     local_country = country.get_country_by_name(data[4].strip())
                 if data[7] is not None:
                     admin_unit = country_admin_unit.get_country_admin_unit_by_name(data[7].strip())
+                if data[10] is not None:
+                    local_residence_measurement_unit = residence_measurement_unit.get_residence_measurement_unit_by_name(data[10])
                 city = City()
                 city.name = data[0].strip().title()
                 city.latitude = data[2].strip()
@@ -55,6 +59,7 @@ def import_city():
                 city.population = data[9].strip()
                 city.country = local_country
                 city.adminUnit = admin_unit
+                city.residenceMeasurementUnit = local_residence_measurement_unit
                 caste_json = json.dumps(city.__dict__,
                                         default=city.encode_associations)
                 headers.update({'Content-Type': 'application/json'})

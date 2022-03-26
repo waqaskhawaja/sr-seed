@@ -29,8 +29,8 @@ def import_currencies():
         next(reader, None)
         for data in reader:                        
             if get_currency_by_code(data["code"].strip()) is None:
-                gender = {'name': data["name"].strip(), 'code': data["code"].strip()}
-                requests.post(base_url + '/api/currencies', headers=headers, json=gender)
+                currency = {'name': data["name"].strip(), 'code': data["code"].strip()}
+                requests.post(base_url + '/api/currencies', headers=headers, json=currency)
 
 
 

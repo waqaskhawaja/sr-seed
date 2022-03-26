@@ -11,9 +11,12 @@ class Country:
         self.isoCode = None
         self.addressUnitIdentifier = None
         self.currency = None
+        self.residenceMeasurementUnit = None
 
     def encode_associations(self, obj):
         if isinstance(obj, Currency):
+            return obj.__dict__
+        if isinstance(obj, ResidenceMeasurementUnit):
             return obj.__dict__
         return obj
         
@@ -99,6 +102,17 @@ class Currency:
         self.name = None
         self.urduName = None
         self.code = None
+
+    def __repr__(self):
+        return self.name + ', ' + self.urduName
+
+
+class Ethnicity:
+
+    def __init__(self):
+        self.id = None
+        self.name = None
+        self.urduName = None        
 
     def __repr__(self):
         return self.name + ', ' + self.urduName
@@ -246,6 +260,16 @@ class CountryAdminUnit:
         return self.name + ', ' + self.urduName + ', ' + self.parent.name + ', ' + self.countryAdminUnitType.name
 
 
+class ResidenceMeasurementUnit:
+
+    def __init__(self):
+        self.id = None
+        self.name = None   
+
+    def __repr__(self):
+        return self.name + ', ' + self.urduName
+
+
 class City:
 
     def __init__(self):
@@ -264,6 +288,8 @@ class City:
         if isinstance(obj, Country):
             return obj.__dict__
         if isinstance(obj, CountryAdminUnit):
+            return obj.__dict__
+        if isinstance(obj, ResidenceMeasurementUnit):
             return obj.__dict__
         return obj
 
@@ -480,7 +506,8 @@ class Person:
         self.profession = None
         self.preferences = None
         self.city = None
-        self.candidateStatus = None
+        self.candidateCurrentStatus = None
+        self.ethnicity = None
 
     def encode_associations(self, obj):
         # print('Person ' + str(type(obj)))
@@ -501,6 +528,8 @@ class Person:
         if isinstance(obj, Preferences):
             return obj.__dict__        
         if isinstance(obj, City):
-            return obj.__dict__        
+            return obj.__dict__
+        if isinstance(obj, Ethnicity):
+            return obj.__dict__  
         # print('returning obj ' + str(type(obj)))
         return obj

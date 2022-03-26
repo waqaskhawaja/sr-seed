@@ -7,7 +7,7 @@ import marital_status
 import caste
 import gender
 import profession
-import worldcities
+import cities
 import religion
 import sect
 import education_levels
@@ -41,7 +41,7 @@ def import_person():
             person_sect = None
             person_age = None
             person_city = None
-            person_status = None
+            candidate_current_status = None
             person_registration_date = None            
             if data["Registration Date"] is not None and data["Registration Date"] != '':
                 try: 
@@ -53,7 +53,7 @@ def import_person():
                         try:
                             person_registration_date = datetime.datetime.strptime(data["Registration Date"],"%d/%m/%Y")
                         except:
-                            print('Date parse error : ' + data["Registration Date"])
+                            print('Date parse error : ' + data["Registration Date"] + ' for person ' + data["Name"])
 
             person_date_data = datetime.datetime(2020, 10, 1, 9, 00)
             if data["Date"] is not None and data["Date"] != '':                
@@ -79,8 +79,10 @@ def import_person():
                 person_caste = caste.get_caste_by_name(data["Caste"].strip())
                 # if person_caste is None and data["Caste"].strip() is not None and data["Caste"].strip() != '':
                 #     print(data["Caste"] + ' caste not found.')
+            if data["Status"] is not None:
+                candidate_current_status = data["Status"].strip()
             if data["City"] is not None:
-                person_city = worldcities.get_city_by_name(data["City"].strip())
+                person_city = cities.get_city_by_name(data["City"].strip())
             if data["Profession"] is not None:                
                 person_profession = data["Profession"]
             if data["Sect"] == 'Christian':
@@ -103,6 +105,7 @@ def import_person():
             person.religion = person_religion
             person.sect = person_sect
             person.city = person_city
+            person.candidateCurrentStatus = candidate_current_status
             if person_profession is not None:
                 person.comments = str(data["Profession"]) +'\n\n' + str(person.comments)
             if data["Comments"].strip() is not None:
@@ -110,8 +113,6 @@ def import_person():
             if person_registration_date is not None:
                 person.registrationDate = person_registration_date.strftime('%Y-%m-%dT%H:%M:%S.%fZ')
                 person.registered = True
-            if person_status is not None:
-                person.candidateStatus = person_status
 
             preferences = Preferences()
 
@@ -149,7 +150,7 @@ def import_person():
                     except AttributeError:
                         preferred_cities.append(None)
                 else:
-                    preferred_cities.append(worldcities.get_city_by_name(data["Location Req"].strip()))
+                    preferred_cities.append(cities.get_city_by_name(data["Location Req"].strip()))
 
             preferences_json = json.dumps(preferences.__dict__,
                                           default=preferences.encode_associations)

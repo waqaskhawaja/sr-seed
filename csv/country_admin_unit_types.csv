@@ -2,3 +2,354 @@ Name,urduName,Parent,Country
 Province,صوبہ,,Pakistan
 District,ضلع,Province,Pakistan
 Tehsil,تحصیل,District,Pakistan
+Province,صوبہ,,Afghanistan
+District,ضلع,Province,Afghanistan
+County,کاؤنٹی,,Albania
+Municipality,میونسپلٹی,County,Albania
+Province,صوبہ,,Algeria
+District,ضلع,Province,Algeria
+Parish,پیرش,,Andorra
+Province,صوبہ,,Angola
+Municipality,میونسپلٹی,Province,Angola
+Parish,پیرش,,Antigua and Barbuda
+Province,صوبہ,,Argentina
+Department,شعبہ,Province,Argentina
+Province,صوبہ,,Armenia
+Municipality,میونسپلٹی,Province,Armenia
+State,حالت,,Australia
+Local Government Area,لوکل گورنمنٹ ایریا,State,Australia
+State,حالت,,Austria
+District,ضلع,State,Austria
+District,ضلع,,Azerbaijan
+District,ضلع,,Bahamas
+Governorate,گورنریٹ,,Bahrain
+Division,ڈویژن,,Bangladesh
+District,ضلع,Division,Bangladesh
+Parish,پیرش,,Barbados
+Region,علاقہ,,Belarus
+District,ضلع,Region,Belarus
+Region,علاقہ,,Belgium
+Province,صوبہ,Region,Belgium
+District,ضلع,,Belize
+Municipality,میونسپلٹی,District,Belize
+Department,شعبہ,Municipality,Benin
+Commune,کمیون,Department,Benin
+District,ضلع,,Bhutan
+Block,بلاک,District,Bhutan
+Department,شعبہ,,Bolivia
+Province,صوبہ,Department,Bolivia
+Canton,کینٹن,,Bosnia and Herzegovina
+District,ضلع,Canton,Botswana
+Sub-District,ذیلی ضلع,District,Botswana
+State,حالت,,Brazil
+Municipality,میونسپلٹی,State,Brazil
+District,ضلع,,Brunei
+Sub-District,ذیلی ضلع,District,Brunei
+Province,صوبہ,,Bulgaria
+Municipality,میونسپلٹی,Province,Bulgaria
+Region,علاقہ,,Burkina Faso
+Province,صوبہ,Region,Burkina Faso
+Province,صوبہ,,Burundi
+Commune,کمیون,Province,Burundi
+Province,صوبہ,,Cambodia
+District,ضلع,Province,Cambodia
+Region,علاقہ,,Cameron
+Department,شعبہ,Region,Cameron
+Province,صوبہ,,Canada
+Municipality,میونسپلٹی,Province,Canada
+Municipality,میونسپلٹی,,Cape Verde
+Parish,پیرش,Municipality,Cape Verde
+Prefecture,پریفیکچر,,Central African Republic
+Sub-Prefecture,ذیلی پریفیکچر,Prefecture,Central African Republic
+Region,علاقہ,,Chad
+Department,شعبہ,Region,Chad
+Region,علاقہ,,Chile
+Province,صوبہ,Region,Chile
+Province,صوبہ,,China
+Prefecture,پریفیکچر,Province,China
+Department,شعبہ,,Colombia
+Municipality,میونسپلٹی,Department,Colombia
+Autonomous Island,خود مختار جزیرہ,,Comoros
+Prefecture,پریفیکچر,Autonomous Island,Comoros
+Province,صوبہ,,DR Congo
+Territory,علاقہ,Province,DR Congo
+Department,شعبہ,,Congo
+District,ضلع,Department,Congo
+Province,صوبہ,,Costa Rica
+Canton,کینٹن,Province,Costa Rica
+County,کاؤنٹی,,Croatia
+Town,صوبہ,County,Croatia
+Province,صوبہ,,Cuba
+Municipality,میونسپلٹی,Province,Cuba
+District,ضلع,,Cyprus
+Community,برادری,District,Cyprus
+Region,علاقہ,,Czech Republic
+District,ضلع,Region,Czech Republic
+Region,علاقہ,,Denmark
+Municipality,میونسپلٹی,Region,Denmark
+Region,علاقہ,,Djibouti
+District,ضلع,Region,Djibouti
+Parish,پیرش,,Dominica
+Province,صوبہ,,Dominican Republic
+Municipality,میونسپلٹی,Province,Dominican Republic
+Municipality,میونسپلٹی,,East Timor
+Administrative Post,انتظامی پوسٹ,Municipality,East Timor
+Province,صوبہ,,Ecuador
+Canton,کینٹن,Province,Ecuador
+Governorate,گورنریٹ,,Egypt
+Marakiz,ماراکیز,Governorate,Egypt
+Department,شعبہ,,El Salvador
+Municipality,میونسپلٹی,Department,El Salvador
+Province,صوبہ,,Equatorial Guinea
+District,ضلع,Province,Equatorial Guinea
+Region,علاقہ,,Eritrea
+District,ضلع,Region,Eritrea
+County,کاؤنٹی,,Estonia
+Town,شہر,County,Estonia
+Region,علاقہ,,Eswatini
+Tinkhundla,ٹنکھنڈلہ,Region,Eswatini
+Region,علاقہ,,Ethiopia
+Zone,زون,Region,Ethiopia
+Division,ڈویژن,,Fiji
+Province,صوبہ,Division,Fiji
+Region,علاقہ,,Finland
+Subregion,ذیلی علاقہ,Region,Finland
+Region,علاقہ,,France
+Department,شعبہ,Region,France
+Province,صوبہ,,Cambodia
+Department,شعبہ,Province,Gabon
+Region,علاقہ,,Gambia
+Local Government Area,لوکل گورنمنٹ ایریا,Region,Gambia
+Region,علاقہ,,Georgia
+City,شہر,Region,Georgia
+State,حالت,,Germany
+District,ضلع,State,Germany
+Region,علاقہ,,Ghana
+District,ضلع,Region,Ghana
+Decentralize,ڈی سینٹرلائز کرنا,,Greece
+Administrative Region,انتظامی علاقہ,Decentralize,Greece
+Parish,پیرش,,Grenada
+Department,شعبہ,,Guatemala
+Municipality,میونسپلٹی,Department,Guatemala
+Region,علاقہ,,Guinea
+Prefecture,پریفیکچر,Region,Guinea
+Region,علاقہ,,Guinea-Bissau
+Sector,شعبہ,Region,Guinea-Bissau
+Region,علاقہ,,Guyana
+Neighborhood,محلہ,Region,Guyana
+Department,شعبہ,,Haiti
+Arrondissement,,Department,Haiti
+Department,شعبہ,,Honduras
+Municipality,میونسپلٹی,Department,Honduras
+County,کاؤنٹی,,Hungary
+District,میونسپلٹی,County,Hungary
+Municipality,میونسپلٹی,,Iceland
+State,حالت,,India
+Division,ڈویژن,State,India
+Province,صوبہ,,Indonesia
+Regent,ریجنٹ,Province,Indonesia
+Province,صوبہ,,Iran
+County,کاؤنٹی,Province,Iran
+Governorate,گورنریٹ,,Iraq
+District,ضلع,Governorate,Iraq
+County,کاؤنٹی,,Ireland
+District,ضلع,County,Ireland
+District,ضلع,,Israel
+Sub-District,ذیلی ضلع,District,Israel
+Region,علاقہ,,Italy
+Province,صوبہ,Region,Italy
+Region,علاقہ,,Ivory Coast
+Department,شعبہ,Region,Ivory Coast
+Parish,پیرش,,Jamaica
+Prefectural Division,پریفیکچرل ڈویژن,,Japan
+City,شہر,Prefectural Division,Japan
+Governorate,گورنریٹ,,Jordan
+District,ضلع,Governorate,Jordan
+Region,علاقہ,,Kazakhstan
+Raion,رائون,Region,Kazakhstan
+County,کاؤنٹی,,Kenya
+Sub-County,ذیلی کاؤنٹی,County,Kenya
+None,,,Kiribati
+Governorate,گورنریٹ,,Kuwait
+Area,رقبہ,Governorate,Kuwait
+Region,علاقہ,,Kyrgyzstan
+District,ضلع,Region,Kyrgyzstan
+Province,صوبہ,,Laos
+District,ضلع,Province,Laos
+Municipality,میونسپلٹی,,Latvia
+Governorate,گورنریٹ,,Lebanon
+District,ضلع,Governorate,Lebanon
+District,ضلع,,Lesotho
+Constituency,حلقہ,District,Lesotho
+County,کاؤنٹی,,Liberia
+District,ضلع,District,Liberia
+District,ضلع,,Libya
+Baladiyat,بلادیت,District,Libya
+Municipality,میونسپلٹی,,Liechtenstein
+County,کاؤنٹی,,Lithuania
+Municipality,میونسپلٹی,County,Lithuania
+Canton,کینٹن,,Luxembourg
+Commune,کمیون,Canton,Luxembourg
+Faritra,فریترا,,Madagascar
+District,ضلع,Faritra,Madagascar
+Region,علاقہ,,Malawi
+District,ضلع,Region,Malawi
+State,حالت,,Malaysia
+Division,ڈویژن,State,Malaysia
+Atoll,اٹول,,Maldives
+Island,جزیرہ,Atoll,Maldives
+Region,علاقہ,,Mali
+Cercles,سرکلز,Region,Mali
+Regjuni,ریجونی,,Malta
+Kunsilli Lokali,کنسلی لوکالی,Regjuni,Malta
+Municipality,میونسپلٹی,,Marshall Islands
+Region,علاقہ,,Mauritania
+Department,شعبہ,Region,Mauritania
+Island,جزیرہ,,Mauritius
+District,ضلع,Island,Mauritius
+Estados,,,Mexico
+Municipios,میونسپلٹی,Estados,Mexico
+State,حالت,,Micronesia
+Municipality,میونسپلٹی,State,Micronesia
+Raioane,رائوانے,,Moldova
+Municipality,میونسپلٹی,Raioane,Moldova
+Quartier,چوتھائی,,Monaco
+Sums,سورج,,Mongolia
+Aimags,تصویریں,Sums,Mongolia
+Opstine,آپسٹائن,,Montenegro
+Naselja,نسیلجا,Opstine,Montenegro
+Region,علاقہ,,Morocco
+Prefecture,پریفیکچرل ڈویژن,Region,Morocco
+Provincias,صوبائی,,Mozambique
+Distritos,ڈسٹریٹوس,Provincias,Mozambique
+State,حالت,,Myanmar
+District,ضلع,State,Myanmar
+Region,علاقہ,,Namibia
+Constituency,حلقہ,Region,Namibia
+District,ضلع,,Nauru
+Province,صوبہ,,Nepal
+District,ضلع,Province,Nepal
+Province,صوبہ,,Netherlands
+Non-Unitary Regions,غیر وحدانی علاقے,,New Zealand
+Department,شعبہ,,Nicaragua
+Municipios,میونسپلٹی,Department,Nicaragua
+Region,علاقہ,,Niger
+Department,شعبہ,Region,Niger
+State,حالت,,Nigeria
+Local Government,مقامی حکومت,State,Nigeria
+Do,,,North Korea
+Kun,,Do,North Korea
+Opstini,آپسٹینی,,North Macedonia
+County,کاؤنٹی,,Norway
+Municipality,میونسپلٹی,County,Norway
+Muhafazat,محفل,,Oman
+Wilaya’at,ولایت,Muhafazat,Oman
+State,حالت,,Palau
+West Bank,مغربی کنارہ,,Palestine
+Governorate,گورنریٹ,West Bank,Palestine
+Province,صوبہ,,Panama
+District,ضلع,Province,Panama
+Province,صوبہ,,Papua New Guinea
+Region,علاقہ,Province,Papua New Guinea
+Department,شعبہ,,Paraguay
+District,ضلع,Department,Paraguay
+Department,شعبہ,,Peru
+Province,صوبہ,Department,Peru
+Rehiyong,,,Philippines
+Lalawigan,,Rehiyong,Philippines
+Voivodeship,,,Poland
+Powiaty,,Voivodeship,Poland
+Distritos,ضلع,,Portugal
+Concelhos,,Distritos,Portugal
+Baladiyat,بلادیت,,Qatar
+Zone,زون,Baladiyat,Qatar
+Judete,جوڈیٹ,,Romania
+Orase,اوریس,Judete,Romania
+Oblast,اوبلاست,,Russia
+District,ضلع,Oblast,Russia
+Intara,,,Rwanda
+Uturere,,Intara,Rwanda
+Saint Kitt,سینٹ کٹ,,Saint Kitts and Nevis
+Parish,پیرش,Saint Kitt,Saint Kitts and Nevis
+District,ضلع,,Saint Lucia
+Parish,پیرش,,Saint Vincent and the Grenadines
+Itumalo,,,Samoa
+Castelli,کاسٹیلی,,San Marino
+Distritos,ڈسٹریٹوس,,Sao Tome and Principe
+Manatiq,مناطق,,Saudi Arabia
+Muhafazat,محفل,Manatiq,Saudi Arabia
+Region,علاقہ,,Senegal
+Department,شعبہ,Region,Senegal
+Okruga,اوکروگا,,Serbia
+Opstina,آپسٹینا,Okruga,Serbia
+District,ضلع,,Seychelles
+Province,صوبہ,,Sierra Leone
+District,ضلع,Province,Sierra Leone
+District,ضلع,,Singapore
+Constituency,حلقہ,District,Singapore
+Obcine,اوبائین,,Slovenia
+Province,صوبہ,,Solomon Islands
+Gobolada,گوبولاڈا,,Somalia
+District,ضلع,Gobolada,Somalia
+Province,صوبہ,,South Africa
+District,ضلع,Province,South Africa
+Do,,,South Korea
+Si,,Do,South Korea
+State,حالت,,South Sudan
+County,کاؤنٹی,State,South Sudan
+Comunidades,,,Spain
+Province,صوبہ,Comunidades,Spain
+Province,صوبہ,,Sri Lanka
+District,ضلع,Province,Sri Lanka
+Wilaya’at,ولایت,,Sudan
+District,ضلع,Wilaya’at,Sudan
+Districten,ڈسٹرکٹن,,Suriname
+Ressorten,ریسورٹن,Districten,Suriname
+Lan,لین,,Sweden
+Kommuner,کمیونر,Lan,Sweden
+Canton,کینٹن,,Switzerland
+District,ضلع,Canton,Switzerland
+Muhafazat,محفل,,Syria
+Manatiq,مناطق,Muhafazat,Syria
+Viloyatho,ولیاتھو,,Tajikistan
+Canton,ولیاتھو,Viloyatho,Tajikistan
+Mkoa,مکوا۔,,Tanzania
+Wilaya,ولایہ,Mkoa,Tanzania
+Changwat,چنگوت,,Thailand
+Amphoe,امفو,Changwat,Thailand
+Region,علاقہ,,Togo
+Prefecture,پریفیکچر,Region,Togo
+Province,صوبہ,,Tonga
+District,ضلع,Province,Tonga
+Region,علاقہ,,Trinidad and Tobago
+Wilaya’at,ولایت,,Tunisia
+Mutamadiyat,معتمدیت,Wilaya’at,Tunisia
+Il,,,Turkey
+Ilce,,Il,Turkey
+Welayatlar,ویلیاتلر,,Turkmenistan
+Adyndaky,اڈینڈکی,Welayatlar,Turkmenistan
+Municipality,میونسپلٹی,,Tuvalu
+District,ضلع,,Uganda
+County,کاؤنٹی,District,Uganda
+Oblast,اوبلاست,,Ukraine
+Raion,رائون,Oblast,Ukraine
+Emirate,امارات,,United Arab Emirates
+Local Municipality,مقامی بلدیہ,Emirate,United Arab Emirates
+County,کاؤنٹی,,United Kingdom
+County,کاؤنٹی,,United States
+Departamentos,ڈپارٹمنٹس,,Uruguay
+Canton,کینٹن,Departamentos,Uruguay
+Viloyatlar,ولیاتلر,,Uzbekistan
+Tumanlar,تومنلر,Viloyatlar,Uzbekistan
+Province,صوبہ,,Vanuatu
+Municipality,میونسپلٹی,Province,Vanuatu
+Estados,,,Venezuela
+Municipios,میونسپلٹی,Estados,Venezuela
+Province,صوبہ,,Vietnam
+Provincial City,صوبائی شہر,Province,Vietnam
+Muhafazat,,,Yemen
+District,ضلع,Muhafazat,Yemen
+Province,صوبہ,,Zambia
+District,ضلع,Province,Zambia
+Province,صوبہ,,Zimbabwe
+District,ضلع,Province,Zimbabwe

@@ -26,7 +26,7 @@ def get_caste_by_name(caste_name):
 
 
 def import_castes():
-    with open("./csv/castes.csv", encoding='utf-8') as files:
+    with open("./csv/caste_minus_ethnicity.csv", encoding='utf-8') as files:
         reader = csv.reader(files)
         next(reader, None)
         for data in reader:                        

@@ -1,7 +1,7 @@
 from config import base_url, auth_params
 from model import CityArea
 import country
-import worldcities
+import cities
 import csv
 import requests
 import json
@@ -34,7 +34,7 @@ def import_city_areas():
         next(reader, None)
         for data in reader:
             if get_city_area_by_name(data[0].strip()) is None:
-                local_city = worldcities.get_city_by_name(data[1].strip())
+                local_city = cities.get_city_by_name(data[1].strip())
                 if local_city is not None:
                     local_country = None                    
                     if data[2] is not None:

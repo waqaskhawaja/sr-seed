@@ -7,7 +7,7 @@ import marital_status
 import caste
 import gender
 import profession
-import worldcities
+import cities
 import religion
 import sect
 import education_levels
@@ -58,7 +58,7 @@ def import_person():
                 # if person_caste is None and data["Caste"].strip() is not None and data["Caste"].strip() != '':
                 #     print(data["Caste"] + ' caste not found.')
             if data["City"] is not None:
-                person_city = worldcities.get_city_by_name(data["City"].strip())
+                person_city = cities.get_city_by_name(data["City"].strip())
             if data["Profession"] is not None:
                 person_profession = profession.get_profession_by_name(data["Profession"].strip())
                 if person_profession is None and data["Profession"].strip() is not None and data["Profession"].strip() != '':
@@ -123,7 +123,7 @@ def import_person():
                     except AttributeError:
                         preferred_cities.append(None)
                 else:
-                    preferred_cities.append(worldcities.get_city_by_name(data["Location Req"].strip()))
+                    preferred_cities.append(cities.get_city_by_name(data["Location Req"].strip()))
 
             preferences_json = json.dumps(preferences.__dict__,
                                           default=preferences.encode_associations)

@@ -11,7 +11,7 @@ import employment_status
 import religion
 import country_admin_unit_type
 import country_admin_unit
-import worldcities
+import cities
 import sect
 import contact_type
 import person
@@ -24,31 +24,37 @@ import candidate_status_type
 import language_proficiency
 import languages
 import city_areas
+import ethnicity
+import residence_measurement_unit
 
 
-# person_relationship_type.import_person_relationship_type()
-# candidate_status_type.import_candidate_status_types()
-# language_proficiency.import_language_proficiencies()
-# languages.import_languages()
-# currency.import_currencies()
-# country.import_countries()
-# country_currency.import_country_currency()
-# gender.import_genders()
-# marital_status.import_marital_statuses()
-# educational_institute_type.import_educational_institute_types()
-# education_levels.import_education_levels()
-# marital_status_gender.import_marital_status_genders()
-# caste.import_castes()
-# accommodation_type.import_accommodation_types()
-# accommodation_status.import_accommodation_statuses()
-# employment_status.import_employment_statuses()
-# religion.import_religions()
-# country_admin_unit_type.import_country_admin_unit_types()
-# country_admin_unit.import_country_admin_unit()
-# worldcities.import_city()
-# city_areas.import_city_areas()
-# sect.import_sect()
-# contact_type.import_contact_types()
-# person.import_person()
+person_relationship_type.import_person_relationship_type()
+candidate_status_type.import_candidate_status_types()
+language_proficiency.import_language_proficiencies()
+languages.import_languages()
+currency.import_currencies()
+residence_measurement_unit.import_residence_measurement_unit()
+country.import_countries()
+country_currency.import_country_currency()
+gender.import_genders()
+marital_status.import_marital_statuses()
+educational_institute_type.import_educational_institute_types()
+education_levels.import_education_levels()
+marital_status_gender.import_marital_status_genders()
+caste.import_castes()
+accommodation_type.import_accommodation_types()
+accommodation_status.import_accommodation_statuses()
+employment_status.import_employment_statuses()
+religion.import_religions()
+country_admin_unit_type.import_country_admin_unit_types()
+country_admin_unit.import_country_admin_unit()
+cities.import_city()
+city_areas.import_city_areas()
+sect.import_sect()
+contact_type.import_contact_types()
+ethnicity.import_ethnicities()
+
 profession.import_professions()
 educational_institute.import_educational_institute()
+
+person.import_person()

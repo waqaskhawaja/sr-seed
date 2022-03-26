@@ -5,6 +5,7 @@ import os
 import csv
 import requests
 import json
+import residence_measurement_unit
 
 
 path = r'./csv' # use your path
@@ -51,12 +52,16 @@ def import_countries():
         reader = csv.reader(files)
         next(reader, None)
         for data in reader:                        
+            local_residence_measurement_unit = None
             if get_country_by_name(data[0].strip()) is None:
+                if data[4] is not None:
+                    local_residence_measurement_unit = residence_measurement_unit.get_residence_measurement_unit_by_name(data[4])
                 country = {}
                 country['name'] = data[0].strip()
                 country['isoCode'] = data[1].strip()
                 country['urduName'] = data[2].strip()
                 country['addressUnitIdentifier'] = data[3].strip()
+                country['residenceMeasurementUnit'] = local_residence_measurement_unit
                 response = requests.post(base_url + '/api/countries',headers=headers, json=country)
 
 
